@@ -1,0 +1,156 @@
+/*vip课程服务部分开始*/
+.vip {
+    height: 948px;
+    position: relative;
+    background: #041527;
+    width: 100%;
+}
+.vip .vip_in {
+    height: 868px;
+    position: relative;
+}
+.vip_in .hd {
+    display: inline-block;
+    background: url(../images/hd_bg.png) no-repeat left bottom;
+    padding-bottom: 38px;
+    padding-top: 60px;
+    position: absolute;
+    top: -100px;
+    left: 35px;
+    opacity: 0;
+}
+.vip_in .hd h2 {
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 60px;
+    color: #fff;
+    padding: 0 60px;
+    border-bottom: 3px solid #fff;
+}
+
+.vip_ul {
+    position: absolute;
+    top: 500px;
+    opacity: 0;
+}
+
+.vip_in ul {
+    overflow: hidden;
+    margin-top: 10px;
+}
+.vip_in ul li {
+    width: 168px;
+    height: 168px;
+    background: url(../images/box11_img.jpg) no-repeat center;
+    float: left;
+    margin: 0 16px;
+    margin-top: 40px;
+    transition: all .4s ease;
+}
+
+.vip_in ul li:hover {
+    margin-top: 20px;
+}
+
+.vip_in ul li p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    margin-top: 52px;
+}
+
+.p2 {
+    line-height: 70px;
+    margin: 0;
+}
+.p1 {
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    margin: 70px 0 50px;
+    position: absolute;
+    bottom: 50px;
+    left: 255px;
+}
+.vip_in .a_btn {
+    position: absolute;
+    bottom: -20px;
+    left: 400px;
+}
+/*vip课程服务部分结束*/
+
+/*报名部分开始*/
+.baoming {
+    width: 100%;
+    height: 285px;
+    background-color: #fff;
+    padding: 50px 0 10px;
+    box-sizing: border-box;
+    opacity: 0;
+}
+.baoming h2 {
+    height: 70px;
+    background: url(../images/h_bg.png) no-repeat center top;
+    text-indent: -9999px;
+}
+.W_form {
+    width: 938px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.W_form .left{
+    width: 720px;
+    float: left;
+    height: 122px;
+}
+
+.W_form .left ul {
+    overflow: hidden;
+}
+.W_form .left ul li {
+    float: left;
+    width: 338px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    height: 41px;
+}
+.left ul li .l_text {
+    float: left;
+    font-size: 18px;
+    color: #666;
+    padding-right: 10px;
+    line-height: 40px;
+}
+.left ul li input {
+    float: left;
+    width: 211px;
+    padding: 10px 0;
+    border: 1px solid #c9c9c9;
+    border-radius: 3px;
+    padding-left: 10px;
+    box-shadow: inset 1px 2px 3px #f1f1f1;
+    margin-top: 2px;
+}
+.bm .bm_con .right {
+    width: 218px;
+    float: left;
+}
+.right input {
+    display: block;
+    width: 216px;
+    height: 36px;
+    color: #fff;
+    font-size: 16px;
+    background: #4492dc;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    font-family: Microsoft Yahei;
+}
+.right p {
+    font-size: 12px;
+    color: #666;
+    margin-top: 25px;
+}

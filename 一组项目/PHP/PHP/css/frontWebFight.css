@@ -1,0 +1,149 @@
+.fight {
+    background: url("../images/bg.jpg");
+    width: 100%;
+    height: 1377px;
+    position: relative;
+}
+.fight_in {
+    height: 1248px;
+    position: relative;
+}
+.fight_in .hd {
+    background: url(../images/hd_bg1.png) no-repeat left bottom;
+    padding-bottom: 38px;
+    padding-top: 60px;
+    width: 840px;
+    margin: 0 auto;
+
+    opacity: 0;
+}
+.fight_in .hd h2 {
+    color: #009199;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 60px;
+
+    padding: 0 60px;
+    border-bottom: 3px solid #05B5BF;
+}
+.fight_con {
+    margin-top: 55px;
+    width: 1200px;
+    height: 752px;
+    opacity: 0;
+}
+.fight_con .top {
+    width: 1163px;
+    border: 1px solid #05B5BF;
+    border-bottom: 3px solid #05B5BF;
+    height: 50px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.top_main {
+    width: 290px;
+    border-right: 1px solid #05B5BF;
+    height: 50px;
+    float: left;
+    font-size: 18px;
+    text-align: center;
+    line-height: 50px;
+}
+.on {
+    background: #05B5BF;
+    color: #fff;
+}
+.last {
+    border: none;
+}
+.f_show_box {
+    width: 1085px;
+    margin: 30px auto 0;
+    height: 668px;
+}
+
+.show_box {
+    overflow: hidden;
+}
+.show_b_r {
+    width: 962px;
+    text-align: left;
+    float: right;
+}
+.show_b_r h3 {
+    font-size: 24px;
+    color: #000;
+    margin: 10px 0;
+}
+
+.show_txt_l {
+    width: 470px;
+    float: left;
+}
+.world {
+    height: 80px;
+}
+.world h4 {
+    width: 90px;
+    float: left;
+    height: 25px;
+    background: #05B5BF;
+    font-size: 18px;
+    text-align: center;
+    line-height: 25px;
+    color: #fff;
+}
+.world p {
+    width: 368px;
+    float: right;
+    font-size: 14px;
+    color: #000;
+    line-height: 25px;
+    margin-top: 5px;
+}
+.show_txt_r {
+    width: 350px;
+    float: right;
+    margin-right: 50px;
+}
+.slideBox {
+    width: 962px;
+    overflow: hidden;
+    position: relative;
+}
+.slideBox .bd {
+    position: relative;
+    height: 100%;
+    z-index: 0;
+    width: 784px;
+    margin: 50px auto 0;
+}
+ .slideBox .prev {
+    background: url(../images/box5_left.jpg) no-repeat center;
+    left: 0;
+     position: absolute;
+     top: 50%;
+     margin-top: -30px;
+     display: block;
+     width: 60px;
+     height: 60px;
+}
+.slideBox .next {
+    background: url(../images/box5_right.jpg) no-repeat center;
+    right: 0;
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    display: block;
+    width: 60px;
+    height: 60px;
+}
+.fight_in .p_txt {
+    color: #112131;
+    margin-top: 80px;
+}
+.fight_in .a_btn {
+    background: #05B5BF;
+    margin-top: 50px;
+}

@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="icon" href="image/icon.jpg"/>
+    <title></title>
+    <link rel="stylesheet" href="web项目.css"/>
+    <link rel="stylesheet" href="css/frontWebFooter.css"/>
+    <link rel="stylesheet" href="css/frontWebHmSchool.css"/>
+    <script src="jquery-1.12.1.js"></script>
+    <script src="web项目.js"></script>
+    <style>
+        a {
+            text-decoration: none;
+        }
+        .jump {
+            width: 200px;
+            height: 400px;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 200px;
+            left: -180px;
+            z-index: 66666;
+        }
+
+        .jump ul {
+            position: relative;
+        }
+
+        .jump ul li {
+            height: 80px;
+            padding-left: 50px;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        .jump ul li a {
+            color: #fff;
+            font-size: 20px;
+            line-height: 80px;
+            font-weight: bolder;
+            z-index: 20;
+
+        }
+
+        .current_j {
+            background-color: rgba(193, 12, 8, 0.85);
+            width: 100%;
+            height: 80px;
+            position: absolute;
+            top: 0;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+<!-- 广告区域-->
+<div class="jump">
+    <div class="current_j"></div>
+
+    <ul>
+        <li><a href="../../shouye/index.html">首页</a></li>
+        <li><a href="../../ui-project/ui-index.html">UI设计</a></li>
+        <li><a href="../../frontWeb.html">Web前端</a></li>
+        <li><a href="../../Python/Python.html">Python</a></li>
+        <li><a href="#">PHP</a></li>
+
+    </ul>
+</div>
+<script>
+    var jump = document.getElementsByClassName('jump')[0];
+    var ul_j = jump.children[1];
+    var current_j = jump.children[0];
+    var liArr = ul_j.children;
+    var count = 0;
+
+    for (var i = 0; i < liArr.length; i++) {
+        liArr[i].index = i;
+        liArr[i].onmouseover = function () {
+            fn_j(current_j, 80 * this.index);
+        };
+
+    };
+
+    function fn_j(ele, position) {
+        clearInterval(ele.timer);
+        ele.timer = setInterval(function () {
+            var step = (position - ele.offsetTop) / 10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            ele.style.top = ele.offsetTop + step + 'px';
+            if (Math.abs(position - ele.offsetTop) <= Math.abs(step)) {
+                ele.style.top = position + 'px';
+                clearInterval(ele.timer)
+            }
+        }, 10)
+
+    };
+
+    $(function(){
+        $('.jump').mouseenter(function(){
+            $(this).stop().animate({'left':0},500);
+        }).mouseleave(function(){
+            $(this).stop().animate({'left':'-180px'});
+        })
+    });
+
+</script>
+<div class="top" >
+    <div class="toptitle">3月14日，北京校区 PHP基础班抢报中，零基础也能快速入门</div>
+    <div class="topbox">点击查看</div>
+    <div class="topde">X</div>
+</div>
+<!--顶部导航-->
+<div class="nav">
+    <div class="navimg"><img src="image/logo-bai.png" alt=""/></div>
+    <div class="navdiv">
+        <ul class="navul">
+            <li>PHP培训</li>
+            <li>课程详解</li>
+            <li>视频下载</li>
+            <li>免费资源</li>
+            <li>报名流程</li>
+            <li>技术社区</li>
+            <li>技术社区</li>
+        </ul>
+    </div>
+</div>
+<!--轮播图-->
+<div class="img">
+    <div class="imgbox">
+        <div><img src="image/ban_b.jpg" width="1350px" height="530px" alt=""/></div>
+        <div><img src="image/ban_bg.png" width="1350px" height="530px"/></div>
+        <!--<div><img src="image/ban_b.jpg" width="1350px" height="530px" alt=""/></div>-->
+
+    </div>
+
+    <div class="imgphp" ><img src="image/ban.png" id="animate" alt=""/></div>
+</div>
+<!--校区-->
+<div class="xqwarp">
+    <div class="xq">
+        <ul class="xqul">
+            <li class="">北京</li>
+            <li>上海</li>
+            <li>广州</li>
+            <li>深圳</li>
+            <li>武汉</li>
+            <li>郑州</li>
+            <li>西安</li>
+            <li>哈尔滨</li>
+            <li>长沙</li>
+            <li>济南</li>
+            <li>重庆</li>
+            <li>杭州</li>
+            <li>石家庄</li>
+            <li>成都</li>
+            <li>合肥</li>
+            <li>太原</li>
+            <li>厦门</li>
+        </ul>
+        <ol class="xqol">
+            <li>
+                <ul class="ultxt">
+                    <li>基础班2018-05-06 <p> PHP</p> 火爆报名中</li>
+                    <li><img src="image/bm.jpg" alt=""/></li>
+                    <li id="time">距离毕业:"+day+"天+"hour"+小时+"minute"</li>
+                    <li>在线报名</li>
+                </ul>
+            </li>
+            <li>
+                <ul class="ultxt">
+                    <li>基础班2018-05-06 <p> PHP</p> 火爆报名中</li>
+                    <li><img src="image/bm.jpg" alt=""/></li>
+                    <li id="time2">距离毕业:"+day+"天+"hour"小时"minute"</li>
+                    <li>在线报名</li>
+                </ul>
+            </li>
+            <li>
+                <ul class="ultxt">
+                    <li>基础班2018-05-06 <p> PHP</p> 火爆报名中</li>
+                    <li><img src="image/bm.jpg" alt=""/></li>
+                    <li id="time3">距离毕业:"day+"天"hour"小时"minute"分"second+"秒</li>
+                    <li>在线报名</li>
+                </ul>
+            </li>
+        </ol>
+        <ol  class="xqool">
+            <li>
+                <p id="an">加班 加点开发中敬请期待！！！ 第一小组制作<br/>
+                </p>
+            </li>
+        </ol>
+       <ol  class="xqool">
+            <li>
+                <p>加班 加点开发中敬请期待！！！ 第一小组制作<br/>
+                </p>
+            </li>
+        </ol><ol  class="xqool">
+            <li>
+                <p>加班 加点开发中敬请期待！！！ 第一小组制作<br/>
+                </p>
+            </li>
+        </ol><ol  class="xqool">
+            <li>
+                <p>开发中敬请期待！！！ 第一小组制作<br/>
+                </p>
+            </li>
+        </ol><ol  class="xqool">
+            <li>
+                <p>开发中敬请期待！！！ 第一小组制作<br/>
+                </p>
+            </li>
+        </ol><ol  class="xqool">
+            <li>
+                <p>开发中敬请期待！！！ 第一小组制作<br/>
+                </p>
+            </li>
+        </ol><ol  class="xqool">
+            <li>
+                <p>开发中敬请期待！！！ 第一小组制作<br/>
+                </p>
+            </li>
+        </ol><ol  class="xqool">
+            <li>
+                <p>开发中敬请期待！！！ 第一小组制作<br/>
+                </p>
+            </li>
+        </ol><ol  class="xqool">
+            <li>
+                <p>开发中敬请期待！！！ 第一小组制作<br/>
+                </p>
+            </li>
+        </ol><ol  class="xqool">
+            <li>
+                <p>开发中敬请期待！！！ 第一小组制作<br/>
+                </p>
+            </li>
+        </ol><ol  class="xqool">
+            <li>
+                <p>开发中敬请期待！！！ 第一小组制作<br/>
+                </p>
+            </li>
+        </ol><ol  class="xqool">
+            <li>
+                <p>开发中敬请期待！！！ 第一小组制作<br/>
+                </p>
+            </li>
+        </ol><ol  class="xqool">
+            <li>
+                <p>开发中敬请期待！！！ 第一小组制作china<br/>
+                </p>
+            </li>
+        </ol><ol  class="xqool">
+            <li>
+                <p>开发中敬请期待！！！ 第一小组制作黑马<br/>
+                </p>
+            </li>
+        </ol><ol  class="xqool">
+            <li>
+                <p>开发中敬请期待！！！第一小组制作黑马程序员<br/>
+                </p>
+            </li>
+        </ol><ol  class="xqool">
+            <li>
+                <p>开发中敬请期待！！！第一小组制作黑马程序员<br/>
+                </p>
+            </li>
+        </ol><ol  class="xqool">
+            <li>
+                <p>开发中敬请期待！！！第一小组制作黑马程序员<br/>
+                </p>
+            </li>
+        </ol><ol  class="xqool">
+            <li>
+                <p>开发中敬请期待！！！第一小组制作黑马程序员<br/>
+                </p>
+            </li>
+        </ol>
+        <div clear="both"></div>
+    </div>
+</div>
+<!--背景1-->
+<div class="imgbox1" >
+    <ul id="boss">
+        <li id="li1">PHP在IT变革中扮演着什么样的角色？</li>
+        <li id="li2">现状如何？</li>
+        <li id="li3"><p>PHP在IT变革中扮演着什么样的角色？
+            现状如何？
+            PHP作为非常优秀的、简便的Web开发语言，和Linux、Apache、MySQL紧密结合，形成LAMP的开源黄金组合，不仅降低使用成本，还提升了开发速度，满足最新的互动式网络开发的应用，这使得PHP软件工程师成为一个发展迅速的职业。PHP作为免费开源代码的网站开发技术，相对入职门槛较低，有一定的英文和数学功底即可以学习而且能够顺利上岗。</p></li>
+        <li id="li4">查看更多</li>
+    </ul>
+</div>
+<!--轮播2-->
+<div id="bos">
+    <p id="bosp">为什么说PHP撑起的编程语言的半边天？PHP工程师都能做什么？</p>
+    <ol id="bosol">
+        <li id="bosolleft">
+            <ul id="da">
+                <li><img src="image/1.jpg" width="600" alt=""/></li>
+                <li><img src="image/2.jpg" width="600" alt=""/></li>
+                <li><img src="image/3.jpg" width="600" alt=""/></li>
+                <li><img src="image/4.jpg" width="600" alt=""/></li>
+                <li><img src="image/5.jpg" width="600" alt=""/></li>
+                <li><img src="image/6.jpg" width="600" alt=""/></li>
+                <li><img src="image/7.jpg" width="600" alt=""/></li>
+                <li><img src="image/1.jpg" width="600" alt=""/></li>
+            </ul>
+        </li>
+        <li id="bosolright">
+            <ul id="bosulli">
+                <li>
+                    <ul class="bosullili ">
+                        <li class="l5" >第一小组制作</li>
+                        <li class="l1" id="">项目简介：</li>
+                        <li class="l2" id="">Blog博客系统致力为广大用户提供优质的互动交流平台,实现对博客发表文章、评论、图片、好友等数据的管理，同时实现了博客内容及时、快速更新的功能，系统不仅保留了传统博客系统的功能，还加上了一些人性化的界面设计，使用户对博客的操作更为的方便。</li>
+                        <li class="l3" id="">项目特色：</li>
+                        <li class="l4" id="">1.使用了目前市场上最流行的div+css布局；<br/>
+                            2.使用了html5+css3最前沿技术！<br/>
+                            3.运用最新的前端框架bootstrap；<br/>
+                            4.运用了javascript正则验证技术；<br/>
+                            5.完全解决各浏览器兼容性；<br/>
+                            6.完美解决PC端和移动端的兼容性.</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="bosullili ">
+                        <li class="l5" >黑马前端</li>
+                        <li class="l1" id="">项目简介：</li>
+                        <li class="l2" id="">Blog博客系统致力为广大用户提供优质的互动交流平台,实现对博客发表文章、评论、图片、好友等数据的管理，同时实现了博客内容及时、快速更新的功能，系统不仅保留了传统博客系统的功能，还加上了一些人性化的界面设计，使用户对博客的操作更为的方便。</li>
+                        <li class="l3" id="">项目特色：</li>
+                        <li class="l4" id="">1.使用了目前市场上最流行的div+css布局；<br/>
+                            2.使用了html5+css3最前沿技术！<br/>
+                            3.运用最新的前端框架bootstrap；<br/>
+                            4.运用了javascript正则验证技术；<br/>
+                            5.完全解决各浏览器兼容性；<br/>
+                            6.完美解决PC端和移动端的兼容性.</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="bosullili ">
+                        <li class="l5" >第一小组开发</li>
+                        <li class="l1" id="">项目简介：</li>
+                        <li class="l2" id="">Blog博客系统致力为广大用户提供优质的互动交流平台,实现对博客发表文章、评论、图片、好友等数据的管理，同时实现了博客内容及时、快速更新的功能，系统不仅保留了传统博客系统的功能，还加上了一些人性化的界面设计，使用户对博客的操作更为的方便。</li>
+                        <li class="l3" id="">项目特色：</li>
+                        <li class="l4" id="">1.使用了目前市场上最流行的div+css布局；<br/>
+                            2.使用了html5+css3最前沿技术！<br/>
+                            3.运用最新的前端框架bootstrap；<br/>
+                            4.运用了javascript正则验证技术；<br/>
+                            5.完全解决各浏览器兼容性；<br/>
+                            6.完美解决PC端和移动端的兼容性.</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="bosullili ">
+                        <li class="l5" >不一样的烟火</li>
+                        <li class="l1" id="">项目简介：</li>
+                        <li class="l2" id="">Blog博客系统致力为广大用户提供优质的互动交流平台,实现对博客发表文章、评论、图片、好友等数据的管理，同时实现了博客内容及时、快速更新的功能，系统不仅保留了传统博客系统的功能，还加上了一些人性化的界面设计，使用户对博客的操作更为的方便。</li>
+                        <li class="l3" id="">项目特色：</li>
+                        <li class="l4" id="">1.使用了目前市场上最流行的div+css布局；<br/>
+                            2.使用了html5+css3最前沿技术！<br/>
+                            3.运用最新的前端框架bootstrap；<br/>
+                            4.运用了javascript正则验证技术；<br/>
+                            5.完全解决各浏览器兼容性；<br/>
+                            6.完美解决PC端和移动端的兼容性.</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="bosullili ">
+                        <li class="l5" >第一组制作</li>
+                        <li class="l1" id="">项目简介：</li>
+                        <li class="l2" id="">Blog博客系统致力为广大用户提供优质的互动交流平台,实现对博客发表文章、评论、图片、好友等数据的管理，同时实现了博客内容及时、快速更新的功能，系统不仅保留了传统博客系统的功能，还加上了一些人性化的界面设计，使用户对博客的操作更为的方便。</li>
+                        <li class="l3" id="">项目特色：</li>
+                        <li class="l4" id="">1.使用了目前市场上最流行的div+css布局；<br/>
+                            2.使用了html5+css3最前沿技术！<br/>
+                            3.运用最新的前端框架bootstrap；<br/>
+                            4.运用了javascript正则验证技术；<br/>
+                            5.完全解决各浏览器兼容性；<br/>
+                            6.完美解决PC端和移动端的兼容性.</li>
+                    </ul>
+                </li> <li>
+                    <ul class="bosullili ">
+                        <li class="l5" >第一小组开发</li>
+                        <li class="l1" id="">项目简介：</li>
+                        <li class="l2" id="">Blog博客系统致力为广大用户提供优质的互动交流平台,实现对博客发表文章、评论、图片、好友等数据的管理，同时实现了博客内容及时、快速更新的功能，系统不仅保留了传统博客系统的功能，还加上了一些人性化的界面设计，使用户对博客的操作更为的方便。</li>
+                        <li class="l3" id="">项目特色：</li>
+                        <li class="l4" id="">1.使用了目前市场上最流行的div+css布局；<br/>
+                            2.使用了html5+css3最前沿技术！<br/>
+                            3.运用最新的前端框架bootstrap；<br/>
+                            4.运用了javascript正则验证技术；<br/>
+                            5.完全解决各浏览器兼容性；<br/>
+                            6.完美解决PC端和移动端的兼容性.</li>
+                    </ul>
+                </li>
+                </li> <li>
+                    <ul class="bosullili ">
+                        <li class="l5" >第一小组开发测试</li>
+                        <li class="l1" id="">项目简介：</li>
+                        <li class="l2" id="">Blog博客系统致力为广大用户提供优质的互动交流平台,实现对博客发表文章、评论、图片、好友等数据的管理，同时实现了博客内容及时、快速更新的功能，系统不仅保留了传统博客系统的功能，还加上了一些人性化的界面设计，使用户对博客的操作更为的方便。</li>
+                        <li class="l3" id="">项目特色：</li>
+                        <li class="l4" id="">1.使用了目前市场上最流行的div+css布局；<br/>
+                            2.使用了html5+css3最前沿技术！<br/>
+                            3.运用最新的前端框架bootstrap；<br/>
+                            4.运用了javascript正则验证技术；<br/>
+                            5.完全解决各浏览器兼容性；<br/>
+                            6.完美解决PC端和移动端的兼容性.</li>
+                    </ul>
+                </li>
+
+            </ul>
+        </li>
+    </ol>
+    <ul id="bosul">
+        <li><img src="image/1.jpg" width="141" alt=""/></li>
+        <li><img src="image/2.jpg" width="141" alt=""/></li>
+        <li><img src="image/3.jpg" width="141" alt=""/></li>
+        <li><img src="image/4.jpg" width="141" alt=""/></li>
+        <li><img src="image/5.jpg" width="141" alt=""/></li>
+        <li><img src="image/6.jpg" width="141" alt=""/></li>
+        <li><img src="image/7.jpg" width="141" alt=""/></li>
+    </ul>
+    <ul id="bosradius">
+        <li>> </li>
+        <li> <</li>
+    </ul>
+</div>
+<div class="end">
+    <ul>
+        <li class="end1">
+            他们通过自己的努力 <br/>
+            都已月薪过万 <br/>
+            你还要再等吗? <br/>
+            <div>NO!</div>
+        </li>
+
+    </ul>
+    <ul>
+        <li class="end1">
+            他们通过自己的努力 <br/>
+            都已月薪过万 <br/>
+            你还要再等吗? <br/>
+            <div>NO!</div>
+        </li>
+        <li class="end5">
+            <ul id="endtext">
+                <li>
+                    <p>江丹</p>
+                    PHP0709就业班学员 <br/>
+                    就业薪资12000元/月
+                </li>
+                <li>
+                    <P>付博</P>
+                    PHP0704就业班学员 <br/>
+                    就业薪资11000元/月
+                </li>
+                <li><p>薛峰</p>
+                    PHP44期学员 <br/>
+                    就业薪资11000元/月
+                </li>
+
+            </ul>
+        </li>
+        <li class="end6">
+            <ul id="endboss">
+                <li><img src="image/a1.jpg" width="750" height="398" alt=""/></li>
+                <li><img src="image/a2.jpg" width="750" height="398" alt=""/></li>
+                <li><img src="image/a1.jpg" width="750" height="398" alt=""/></li>
+
+            </ul>
+        </li>
+        <li>
+            <ul id="endimg">
+                <li class="end2"><img src="image/a1.jpg" width="207" height="125" alt=""/></li>
+                <li class="end3"><img src="image/a2.jpg" width="207" height="125" alt=""/></li>
+                <li class="end4"><img src="image/a3.jpg" width="207" height="125" alt=""
+            </ul>
+        </li>
+    </ul>
+</div>
+<!--end -->
+<div class="baoming" id="im">
+    <h2>每期开班座位有限,预报名可优先享有占座特权哦！</h2>
+
+    <div class="W_form">
+        <form id="addform" method="post">
+            <div class="left">
+                <ul>
+                    <li>
+                        <span class="l_text"><s
+                                style="color:#e00000; font-size:15px; text-decoration:none; line-height:40px; padding-right:5px;">*</s>真实姓名</span>
+                        <input type="text" placeholder="我们期待更了解您" name="name" id="realname">
+                    </li>
+                    <li>
+                        <span class="l_text"><s
+                                style="color:#e00000; font-size:15px; text-decoration:none; line-height:40px; padding-right:5px;">*</s>联系手机</span>
+                        <input type="text" placeholder="我们和您一样讨厌骚扰电话" name="tel" id="phone">
+                    </li>
+                    <li>
+                        <span class="l_text"><s
+                                style="color:#e00000; font-size:15px; text-decoration:none; padding-right:5px;">*</s>上课地址</span>
+                        <select name="aid" id="address" style="width:212px; height:36px; display:block;">
+                            <option value="">请选择上课地址</option>
+                            <option value="3">北京校区</option>
+                            <option value="4">广州校区</option>
+                            <option value="5">上海校区</option>
+                            <option value="7">西安校区</option>
+                            <option value="14">郑州校区</option>
+                            <option value="15">武汉校区</option>
+                            <option value="16">长沙校区</option>
+                            <option value="19">深圳校区</option>
+                            <option value="21">南京校区</option>
+                        </select>
+                    </li>
+                    <li>
+                        <span class="l_text"><s
+                                style="color:#e00000; font-size:15px; text-decoration:none; line-height:40px; padding-right:11px;">*</s>QQ号码</span>
+                        <input type="text" placeholder="我们将尽快与您联系" name="qq" id="qq">
+                        <input type="hidden" name="cid" value="22">
+                        <input type="hidden" name="come" value="前端与移动开发专题">
+                        <input type="hidden" name="url" value="" id="u">
+                    </li>
+                </ul>
+                <br>
+            </div>
+            <div class="right">
+                <input type="button" value="现在预报名" onclick="check()">
+
+                <p>温馨提示：请保持手机畅通，咨询老师将为您提供专属的一对一报名服务。</p>
+            </div>
+        </form>
+    </div>
+</div>
+<!--黑马校区部分-->
+<div class="hm_school">
+    <div class="h_s_in banxin">
+        <h2 class="sch_hd" style='opacity: 1;left: 0;'>不一样的城市<br><strong>一样的<b>黑马程序员</b></strong></h2>
+
+        <div class="t_content ">
+            <div class="t_c_bg"></div>
+            <div class="txt_con">
+                <div>
+                    <h3>家门口的 <img src="images/hm_sh.png"></h3>
+                    学习择业更方便
+                </div>
+                <p class="pbg">相同的课程大纲</p>
+
+                <p>黑马每年都会进行课程的升级和更新，一旦更新，全国所有校区课程将统一使用最新教学大纲。</p>
+
+                <p class="pbg">相同的教学管理</p>
+
+                <p>黑马只有直营，不搞加盟！总部直接派讲师到分校区授课，采用相同的培训模式和课程。</p>
+
+                <p class="pbg">相同的师资力量</p>
+
+                <p>分校区的师资在同一套教师培训体系下完成培训，保障师资质量。</p>
+
+                <p class="pbg">相同的就业服务</p>
+
+                <p>一地学习，全国就业！ 毕业学员将由总部组织到北上广就业，确保高薪就业。</p>
+            </div>
+        </div>
+        <div class="map" style='opacity: 1'>
+            <ul>
+                <li class="cur" style="right:208px; top:240px;"><span class="light">&nbsp;</span> <strong>北京</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/bj.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:90px; top:107px;"><span class="light">&nbsp;</span> <strong>哈尔滨</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/hrb.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:187px; top:330px;"><span class="light">&nbsp;</span> <strong>济南</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/jn.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:90px; bottom:265px;"><span class="light">&nbsp;</span> <strong>上海</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/sh.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:128px; bottom:242px;"><span class="light">&nbsp;</span> <strong
+                        style="top:15px;">杭州</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/hz.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:145px; top:397px;"><span class="light">&nbsp;</span> <strong
+                        style="top:-10px; right:-58px;">南京</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/nj.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:190px; bottom:92px;"><span class="light">&nbsp;</span> <strong>深圳</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/sz.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:247px; top:393px;"><span class="light">&nbsp;</span> <strong>郑州</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/zz.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:254px; bottom:237px;"><span class="light">&nbsp;</span> <strong>武汉</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/wh.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:252px; bottom:194px;"><span class="light">&nbsp;</span> <strong>长沙</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/cs.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:224px; bottom:109px;"><span class="light">&nbsp;</span> <strong
+                        style="left:-35px;">广州</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/gz.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:329px; bottom:235px;"><span class="light">&nbsp;</span> <strong
+                        style="left:-35px;">重庆</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/cq.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:325px; bottom:301px;"><span class="light">&nbsp;</span> <strong
+                        style="left:-35px;">西安</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/xa.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:420px; bottom:213px;"><span class="light">&nbsp;</span> <strong
+                        style="left:-35px;">成都</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/cd.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:223px; top:295px;" class=""><span class="light">&nbsp;</span> <strong
+                        style="left:30px;">石家庄</strong>
+
+                    <div class="li_hov" style="display: none;">
+                        <a href="javascript:;" target="_blank"><img src="images/sjz.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:170px; top:420px;"><span class="light">&nbsp;</span> <strong
+                        style="left:-49px;">合肥</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/hefei.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:265px; top:300px;" class=""><span class="light">&nbsp;</span> <strong
+                        style="left:-5px;top: 35px">太原</strong>
+
+                    <div class="li_hov" style="display: none;">
+                        <a href="javascript:;" target="_blank">
+                            <img src="images/ty.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:140px; bottom:136px;" class=""><span class="light">&nbsp;</span> <strong
+                        style="left:34px;top: 8px">厦门</strong>
+
+                    <div class="li_hov" style="display: none;">
+                        <a href="javascript:;" target="_blank">
+                            <img src="images/xm.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="foot_ch about">
+        <div class="div_list">
+            <h3>关于黑马</h3>
+            <ul>
+                <li><a href="/about/about.html" target="_blank" class="a_gd">黑马概况</a></li>
+                <li><a href="/about/develop.html" target="_blank" class="a_gd">发展历程</a></li>
+                <li><a href="/special/hmschool/index.shtml" target="_blank" class="a_gd">联系我们</a></li>
+            </ul>
+        </div>
+        <div class="div_list">
+            <h3>学习资源</h3>
+            <ul>
+                <li><a href="http://yun.itheima.com/Course" target="_blank" class="a_gd">免费视频下载</a></li>
+                <li><a href="http://yun.itheima.com/Open" target="_blank" class="a_gd">免费公开课</a></li>
+                <li><a href="http://yun.itheima.com/Map" target="_blank" class="a_gd">学习路线图</a></li>
+            </ul>
+        </div>
+        <div class="div_list">
+            <h3>如何报名</h3>
+            <ul>
+                <li><a href="/flow/flow.html" target="_blank" class="a_gd">报名流程</a></li>
+                <li><a href="/flow/flowbasic.html" target="_blank" class="a_gd">报名须知</a></li>
+                <li><a href="/flow/flowhj.html" target="_blank" class="a_gd">住宿环境</a></li>
+            </ul>
+        </div>
+        <div class="div_list div_ewm">
+            <div class="ewmbox">
+                <a href="javascript:;" target="_blank"><span class="iconbox"><i class='iconfont'>&#xe62e;</i></span>
+                    <span class="icon_tt">QQ空间</span></a>
+
+                <div class="ewm">
+                    <img src="images/qq.jpg">
+
+                    <p><span>扫描二维码</span><br>关注黑马程序员QQ空间账号</p>
+                </div>
+            </div>
+            <div class="ewmbox">
+                <span class="iconbox iconbox2"><i class='iconfont'>&#xe7e5;</i></span>
+                <span class="icon_tt">微信公众号</span>
+
+                <div class="ewm">
+                    <img src="images/wx.jpg">
+
+                    <p><span>扫描二维码</span><br>关注黑马程序员微信公众账号</p>
+                </div>
+            </div>
+            <div class="ewmbox">
+                <a href="javascript:;" target="_blank"><span class="iconbox iconbox3"><i class='iconfont'>
+                    &#xe699;</i></span>
+                    <span class="icon_tt">新浪微博</span></a>
+
+                <div class="ewm">
+                    <img src="images/wb.jpg">
+
+                    <p><span>扫描二维码</span><br>关注黑马程序员新浪微博账号</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="foot_ch add">
+        <p>江苏传智播客教育科技有限公司 版权所有Copyright 1999-2018, CSDN.NET, All Rights Reserved <a href="" style="color:#188eee;">苏ICP备16007882</a>
+            <span id="cnzz_stat_icon_3144200"><a href="javascript:;" target="_blank" title="站长统计"><img border="0"
+                                                                                                       hspace="0"
+                                                                                                       vspace="0"
+                                                                                                       src="images/pic1.gif"></a></span>
+        </p>
+    </div>
+</div>
+<script>
+//    封装时间
+    (function () {
+        var timer=setInterval(fn,1000);
+        function fn(){
+            var time=document.getElementById("time");
+            var time2=document.getElementById("time2");
+            var time3=document.getElementById("time3");
+            var nowTime=new Date().getTime();
+            var futureTime=new Date("2018/6/8 00:00:00").getTime();
+            var zs=futureTime-nowTime;
+            var day=parseInt(zs/1000/60/60/24);
+            var hour=parseInt(zs/1000/60/60%24);
+            var minute=parseInt(zs/1000/60%60);
+            var second=parseInt(zs/1000%60);
+            time.innerHTML="距离毕业:"+day+"天"+hour+"小时"+minute+"分"+second+"秒！";
+            time2.innerHTML="距离毕业:"+day+"天"+hour+"小时"+minute+"分"+second+"秒！";
+            time3.innerHTML="距离毕业:"+day+"天"+hour+"小时"+minute+"分"+second+"秒！";
+        }
+    })();
+$(function () {
+    var timer=0;
+    function autoplay(index){
+        clearInterval(timer)
+        var index = index||0;
+        timer=setInterval(function () {
+            if( index==7){
+                index=0;
+            }
+//            console.log(index)
+                $("#da>li").hide();
+
+            $("#da>li:eq("+index+")").show();
+            index++;
+            $("#bosul>li").css("opacity",1);
+            $("#bosul>li:eq("+index+")").siblings().css("opacity",0.3);
+            $("#da>li").hide();
+            $("#da>li:eq("+index+")").show();
+            $("#bosulli>li").hide();
+            $("#bosulli>li:eq("+index+")").show();
+        },1000)
+    }
+    autoplay();
+    $("#bosul>li").mouseenter(function () {
+        var timer=0;
+        index=$(this).index();
+        $(this).css("opacity",1);
+        $(this).siblings().css("opacity",0.3);
+        $("#da>li").hide();
+        $("#da>li:eq("+index+")").show(1000);
+        $("#bosulli>li").hide();
+        $("#bosulli>li:eq("+index+")").show(1000);
+    });
+    $('#bosul>li').mouseenter(function () {
+        clearInterval(timer)
+    }).mouseleave(function () {
+        autoplay($(this).index())
+    })
+});
+$('.map>ul>li').mouseenter(function () {
+    $(this).find('.li_hov').css('display', 'block');
+}).mouseleave(function () {
+    $(this).find('.li_hov').css('display', 'none');
+});
+
+$('.ewmbox').mouseenter(function () {
+    $(this).find('.ewm').css('display', 'block');
+    $(this).find('.iconbox').stop().animate({'backgroundColor': '#0a8bb8'}, 500)
+    $(this).find('.iconbox').css('cursor', 'pointer')
+}).mouseleave(function () {
+    $(this).find('.ewm').css('display', 'none');
+    $(this).find('.iconbox').stop().animate({'backgroundColor': '#486687'}, 500)
+});
+</script>
+</body>
+</html>

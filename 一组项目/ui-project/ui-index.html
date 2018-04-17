@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>黑马程序员全能设计培训-全能设计培训|全能设计师培训|设计培训</title>
+    <meta name="keywords" content="全能设计培训,全能设计师培训,设计培训">
+    <meta name="description"
+          content="黑马程序员全能设计学院一直本着学为人师,行为世范德行操守要求着自己,并成为全能设计培训行业中前行者,为广大全能设计好者提供全能设计培训,全能设计师培训,设计培训服务。">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <!--底部-->
+    <link rel="stylesheet" href="底部部分/css/frontWebFooter.css">
+    <link rel="stylesheet" href="底部部分/css/frontWebHmSchool.css">
+    <link rel="icon" href="favicon.ico">
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <script src="js/ui-index-jq.js"></script>
+    <script src="js/ui-index-js.js"></script>
+    <style>
+        .jump {
+            width: 200px;
+            height: 400px;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 200px;
+            left: -180px;
+            z-index: 66666;
+        }
+
+        .jump ul {
+            position: relative;
+        }
+
+        .jump ul li {
+            height: 80px;
+            padding-left: 50px;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        .jump ul li a {
+            color: #fff;
+            font-size: 20px;
+            line-height: 80px;
+            font-weight: bolder;
+            z-index: 20;
+
+        }
+
+        .current_j {
+            background-color: rgba(193, 12, 8, 0.85);
+            width: 100%;
+            height: 80px;
+            position: absolute;
+            top: 0;
+            z-index: 0;
+        }
+
+        /*报名部分开始*/
+        .baoming {
+            width: 100%;
+            height: 285px;
+            background-color: #fff;
+            padding: 50px 0 10px;
+            box-sizing: border-box;
+            opacity: 1;
+        }
+        .baoming h2 {
+            height: 70px;
+            background: url(images/h_bg.png) no-repeat center top;
+            text-indent: -9999px;
+        }
+        .W_form {
+            width: 938px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .W_form .left{
+            width: 720px;
+            float: left;
+            height: 122px;
+        }
+
+        .W_form .left ul {
+            overflow: hidden;
+        }
+        .W_form .left ul li {
+            float: left;
+            width: 338px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            height: 41px;
+        }
+        .left ul li .l_text {
+            float: left;
+            font-size: 18px;
+            color: #666;
+            padding-right: 10px;
+            line-height: 40px;
+        }
+        .left ul li input {
+            float: left;
+            width: 211px;
+            padding: 10px 0;
+            border: 1px solid #c9c9c9;
+            border-radius: 3px;
+            padding-left: 10px;
+            box-shadow: inset 1px 2px 3px #f1f1f1;
+            margin-top: 2px;
+        }
+        .bm .bm_con .right {
+            width: 218px;
+            float: left;
+        }
+        .right input {
+            display: block;
+            width: 216px;
+            height: 36px;
+            color: #fff;
+            font-size: 16px;
+            background: #4492dc;
+            border: none;
+            outline: none;
+            border-radius: 3px;
+            font-family: Microsoft Yahei;
+        }
+        .right p {
+            font-size: 12px;
+            color: #666;
+            margin-top: 25px;
+        }
+
+    </style>
+
+</head>
+<body>
+<!----- 页面顶部start ------>
+<div class="top">
+    <div class="top-inner">
+        <!--字体-->
+        <span class="top-sp">凭什么UI/UE综合设计师成为互联网时代新宠，3月15日，杭州校区 揭晓答案</span>
+        <a href="http://d.itcast.cn/a" target="_blank" class="top-a" style="position: absolute;top: 13px">点击查看</a>
+    </div>
+    <!--关闭-->
+    <a href="javaScript:;" title="关闭" class="top-close"></a>
+</div>
+<div class="jump">
+    <div class="current_j"></div>
+
+    <ul>
+        <li><a href="../shouye/index.html">首页</a></li>
+        <li><a href="#">UI设计</a></li>
+        <li><a href="../frontWeb.html">Web前端</a></li>
+        <li><a href="../Python/Python.html">Python</a></li>
+        <li><a href="../PHP/PHP/web项目.html">PHP</a></li>
+
+    </ul>
+</div>
+<script>
+    var jump = document.getElementsByClassName('jump')[0];
+    var ul_j = jump.children[1];
+    var current_j = jump.children[0];
+    var liArr = ul_j.children;
+    var count = 0;
+
+    for (var i = 0; i < liArr.length; i++) {
+        liArr[i].index = i;
+        liArr[i].onmouseover = function () {
+            fn_j(current_j, 80 * this.index);
+        };
+
+    };
+
+    function fn_j(ele, position) {
+        clearInterval(ele.timer);
+        ele.timer = setInterval(function () {
+            var step = (position - ele.offsetTop) / 10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            ele.style.top = ele.offsetTop + step + 'px';
+            if (Math.abs(position - ele.offsetTop) <= Math.abs(step)) {
+                ele.style.top = position + 'px';
+                clearInterval(ele.timer)
+            }
+        }, 10)
+
+    };
+
+    $(function(){
+        $('.jump').mouseenter(function(){
+            $(this).stop().animate({'left':0},500);
+        }).mouseleave(function(){
+            $(this).stop().animate({'left':'-180px'});
+        })
+    });
+
+</script>
+
+<!------ 页面顶部end ------->
+
+<!------ 页面导航栏start ----->
+<header class="header">
+    <!--版心-->
+    <div class="bx">
+        <!--左侧图标-->
+        <h1><a href="http://www.itheima.com" target="_blank"><img src="images/logo.png" alt=""></a></h1>
+        <!--导航栏-->
+        <ul>
+            <li class="first">UI/UE综合设计师培训</li>
+            <li><a href="http://www.itheima.com/special/szicd/index.html" target="_blank">学科概述</a></li>
+            <li><a href="http://www.itheima.com/special/szicd/jyqj.html" target="_blank">学科前景</a></li>
+            <li><a href="http://www.itheima.com/special/szicd/xyzp.html" target="_blank">学员作品</a></li>
+            <li><a href="http://www.itheima.com/course/uitext.html" target="_blank">课程大纲</a></li>
+            <li class="free"><a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=3276250747"
+                                target="_blank">免费资源获取</a></li>
+            <li><a href="http://www.itheima.com/flow/flow.html#ui" target="_blank">报名流程</a></li>
+            <li><a href="http://bbs.itheima.com/" target="_blank">技术社区</a></li>
+        </ul>
+    </div>
+</header>
+<!------ 页面导航栏end ----->
+
+<!----- 页面主体板块start ------>
+<div class="section">
+    <!--轮播图-->
+    <div class="banner">
+            <!--背景-->
+            <div class="banner-img">
+                <ul class="banner_ul">
+                    <!--第一张-->
+                    <li class="banner-bj ">
+                        <!--图标-->
+                        <ul class="inner bx">
+                            <li class="im1"><img src="images/ban_icon1.png" alt="" ></li>
+                            <li class="im2"><img src="images/ban_icon2.png" alt="" ></li>
+                            <li class="im3"><img src="images/ban_icon3.png" alt="" ></li>
+                        </ul>
+                    </li>
+                    <!--第二张-->
+                    <li class="banner-bj2 "></li>
+                    <li class="banner-bj"style="position: absolute;left: 200%;">
+                        <!--图标-->
+                        <ul class="inner bx">
+                            <li class="im1"><img src="images/ban_icon1.png" alt="" ></li>
+                            <li class="im2"><img src="images/ban_icon2.png" alt="" ></li>
+                            <li class="im3"><img src="images/ban_icon3.png" alt="" ></li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+
+            </div>
+            <!--小点-->
+            <div class="circle">
+                <span class="active"></span>
+                <span></span>
+            </div>
+        </div>
+    <!--开班时间-->
+    <div class="openTime">
+            <!--版心-->
+            <div class="bx">
+                <!--图片-->
+                <div class="openTime-im">
+                    <img src="./images/time_01.png" alt="">
+                </div>
+                <!--各地开班-->
+                <div class="kb-subject clearfix">
+                    <!--左侧-->
+                    <div class="kb-city fl">
+                        <p>
+                            <span class="span1">—————</span>开设校区<span class="span2">—————</span>
+                        </p>
+                        <div class="main-city">
+                            <a href="javascript:;" class="have now">北京</a><a href="javascript:;" class="have">深圳</a><a href="javascript:;" class="have">上海</a><a href="javascript:;" class="no">哈尔滨</a><a href="javascript:;" class="no">济南</a><a href="javascript:;" class="no">重庆</a><a href="javascript:;" class="no">郑州</a><a href="javascript:;" class="have">武汉</a><a href="javascript:;" class="no">西安</a><a href="javascript:;" class="have">广州</a><a href="javascript:;" class="no">长沙</a><a href="javascript:;" class="have">杭州</a><a href="javascript:;" class="no">南京</a><a href="javascript:;" class="no">成都</a><a href="javascript:;" class="no">石家庄</a><a href="javascript:;" class="no">合肥</a><a href="javascript:;" class="no">太原</a><a href="javascript:;" class="no">厦门</a>
+                        </div>
+                    </div>
+                    <!--右侧-->
+                    <div class="kb-box fr">
+                        <!--北京-->
+                        <div class="kb-box-xq active">
+                            <ul>
+                             <li>
+                                 <span class="kb-sp1">北京</span>
+                                 <span>UI/UE综合设计师基础班</span>
+                                 <span>2017-12-26</span>
+                                 <p><a href="http://d.itcast.cn/a" target="_blank">已开班</a></p>
+                             </li>
+                             <li>
+                                 <span class="kb-sp1">北京</span>
+                                 <span>UI/UE综合设计师基础班</span>
+                                 <span>2018-03-04</span>
+                                 <p><a href="http://d.itcast.cn/a" target="_blank">已开班</a></p>
+                             </li>
+                             <li>
+                                 <span class="kb-sp1">北京</span>
+                                 <span>UI/UE综合设计师基础班</span>
+                                 <span>2018-03-25</span>
+                                 <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                             </li>
+                             <li>
+                                 <span class="kb-sp1">北京</span>
+                                 <span>UI/UE综合设计师基础班</span>
+                                 <span>2018-04-15</span>
+                                 <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                             </li>
+                             <li>
+                                 <span class="kb-sp1">北京</span>
+                                 <span>UI/UE综合设计师就业班</span>
+                                 <span>2018-01-12</span>
+                                 <p><a href="http://d.itcast.cn/a" target="_blank">已开班</a></p>
+                             </li>
+                             <li>
+                                 <span class="kb-sp1">北京</span>
+                                 <span>UI/UE综合设计师就业班</span>
+                                 <span>2018-03-22</span>
+                                 <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                             </li>
+                             <li>
+                                 <span class="kb-sp1">北京</span>
+                                 <span>UI/UE综合设计师就业班</span>
+                                 <span>2018-04-12</span>
+                                 <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                             </li>
+                             <li>
+                                 <span class="kb-sp1">北京</span>
+                                 <span>UI/UE综合设计师就业班</span>
+                                 <span>2018-05-03</span>
+                                 <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                             </li>
+                         </ul>
+                        </div>
+                        <div class="kb-box-xq">
+                            <ul>
+                                <li>
+                                    <span class="kb-sp1">深圳</span>
+                                    <span>UI/UE综合设计师基础班</span>
+                                    <span>2017-12-26</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">已开班</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">深圳</span>
+                                    <span>UI/UE综合设计师基础班</span>
+                                    <span>2018-03-04</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">已开班</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">深圳</span>
+                                    <span>UI/UE综合设计师基础班</span>
+                                    <span>2018-03-25</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">深圳</span>
+                                    <span>UI/UE综合设计师基础班</span>
+                                    <span>2018-04-15</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">深圳</span>
+                                    <span>UI/UE综合设计师就业班</span>
+                                    <span>2018-01-12</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">已开班</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">深圳</span>
+                                    <span>UI/UE综合设计师就业班</span>
+                                    <span>2018-03-22</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">深圳</span>
+                                    <span>UI/UE综合设计师就业班</span>
+                                    <span>2018-04-12</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">深圳</span>
+                                    <span>UI/UE综合设计师就业班</span>
+                                    <span>2018-05-03</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="kb-box-xq">
+                            <ul>
+                                <li>
+                                    <span class="kb-sp1">上海</span>
+                                    <span>UI/UE综合设计师基础班</span>
+                                    <span>2017-12-26</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">已开班</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">上海</span>
+                                    <span>UI/UE综合设计师基础班</span>
+                                    <span>2018-03-04</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">已开班</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">上海</span>
+                                    <span>UI/UE综合设计师基础班</span>
+                                    <span>2018-03-25</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">上海</span>
+                                    <span>UI/UE综合设计师基础班</span>
+                                    <span>2018-04-15</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">上海</span>
+                                    <span>UI/UE综合设计师就业班</span>
+                                    <span>2018-01-12</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">已开班</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">上海</span>
+                                    <span>UI/UE综合设计师就业班</span>
+                                    <span>2018-03-22</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">上海</span>
+                                    <span>UI/UE综合设计师就业班</span>
+                                    <span>2018-04-12</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">上海</span>
+                                    <span>UI/UE综合设计师就业班</span>
+                                    <span>2018-05-03</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="kb-box-xq"><ul></ul></div>
+                        <div class="kb-box-xq"><ul></ul></div>
+                        <div class="kb-box-xq"><ul></ul></div>
+                        <div class="kb-box-xq"><ul></ul></div>
+                        <div class="kb-box-xq">
+                            <ul>
+                                <li>
+                                    <span class="kb-sp1">武汉</span>
+                                    <span>UI/UE综合设计师基础班</span>
+                                    <span>2017-12-26</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">已开班</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">武汉</span>
+                                    <span>UI/UE综合设计师基础班</span>
+                                    <span>2018-03-04</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">已开班</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">武汉</span>
+                                    <span>UI/UE综合设计师基础班</span>
+                                    <span>2018-03-25</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">武汉</span>
+                                    <span>UI/UE综合设计师基础班</span>
+                                    <span>2018-04-15</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">武汉</span>
+                                    <span>UI/UE综合设计师就业班</span>
+                                    <span>2018-01-12</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">已开班</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">武汉</span>
+                                    <span>UI/UE综合设计师就业班</span>
+                                    <span>2018-03-22</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">武汉</span>
+                                    <span>UI/UE综合设计师就业班</span>
+                                    <span>2018-04-12</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">武汉</span>
+                                    <span>UI/UE综合设计师就业班</span>
+                                    <span>2018-05-03</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="kb-box-xq"><ul></ul></div>
+                        <div class="kb-box-xq">
+                            <ul>
+                                <li>
+                                    <span class="kb-sp1">广州</span>
+                                    <span>UI/UE综合设计师基础班</span>
+                                    <span>2017-12-26</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">已开班</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">广州</span>
+                                    <span>UI/UE综合设计师基础班</span>
+                                    <span>2018-03-04</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">已开班</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">广州</span>
+                                    <span>UI/UE综合设计师基础班</span>
+                                    <span>2018-03-25</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">广州</span>
+                                    <span>UI/UE综合设计师基础班</span>
+                                    <span>2018-04-15</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">广州</span>
+                                    <span>UI/UE综合设计师就业班</span>
+                                    <span>2018-01-12</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">已开班</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">广州</span>
+                                    <span>UI/UE综合设计师就业班</span>
+                                    <span>2018-03-22</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">广州</span>
+                                    <span>UI/UE综合设计师就业班</span>
+                                    <span>2018-04-12</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">广州</span>
+                                    <span>UI/UE综合设计师就业班</span>
+                                    <span>2018-05-03</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="kb-box-xq"><ul></ul></div>
+                        <div class="kb-box-xq">
+                            <ul>
+                                <li>
+                                    <span class="kb-sp1">杭州</span>
+                                    <span>UI/UE综合设计师基础班</span>
+                                    <span>2017-12-26</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">已开班</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">杭州</span>
+                                    <span>UI/UE综合设计师基础班</span>
+                                    <span>2018-03-04</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">已开班</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">杭州</span>
+                                    <span>UI/UE综合设计师基础班</span>
+                                    <span>2018-03-25</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                                </li>
+                                <li>
+                                    <span class="kb-sp1">杭州</span>
+                                    <span>UI/UE综合设计师基础班</span>
+                                    <span>2018-04-15</span>
+                                    <p><a href="http://d.itcast.cn/a" target="_blank">我要报名</a></p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="kb-box-xq"><ul></ul></div>
+                        <div class="kb-box-xq"><ul></ul></div>
+                        <div class="kb-box-xq"><ul></ul></div>
+                        <div class="kb-box-xq"><ul></ul></div>
+                        <div class="kb-box-xq"><ul></ul></div>
+                        <div class="kb-box-xq"><ul></ul></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+    <!--全能设计师-->
+    <div class="design">
+        <div class="bx">
+            <img src="images/fullstack2.jpg" alt="">
+        </div>
+    </div>
+    <div class="design-pic"></div>
+    <!--详情介绍-->
+    <div class="details">
+        <div class="bx">
+            <!--第一行-->
+            <div class="first">
+                <div class="f-left fl">
+                    <img src="images/data1_left.png" alt="" class="del-im im-animate del-im1">
+                </div>
+                <div class="f-right fr f-right-yd">
+                    <div class="f-right1 fl"></div>
+                    <div class="f-right2 fl">
+                        <h3>人才奇缺，市场亟需！</h3>
+                        <h4>PEOPLE MISING WORK EASY</h4>
+                        <p>每日超过<span>48252个</span>职位急招。<br>国家信息产业部颁布的调查材料显示,当前国内达到UI设计师专业水平者只有8000人，而市场需求目前高达30万人的缺口。有产品的地方就需要专业UI设计师。</p>
+                        <a href="http://d.itcast.cn/a" target="_blank">2017年人才缺口</a>
+                    </div>
+                </div>
+            </div>
+            <!--第二行-->
+            <div class="second">
+                <div class="f-right fl f-right-yd2">
+                    <div class="f-right1 fl"></div>
+                    <div class="f-right2 fl">
+                        <h3 class="two">就业范围广，择业自由！</h3>
+                        <h4 class="two">EMPLOYMENT CHOICE MORE</h4>
+                        <p>全能UI设计师完全可以胜任网页设计师、平面设计师、移动端界面设计师岗位。并能轻松胜任诸如淘宝、京东等各大电商平台用人需求。<br>互联网高薪艺术岗位随便挑</p>
+                        <a href="http://d.itcast.cn/a" target="_blank">更多热门岗位</a>
+                    </div>
+                </div>
+                <div class="f-left fr">
+                    <img src="images/data2_right.png" alt="" class="del-im .im-animate2 del-im2">
+                </div>
+            </div>
+            <!--第三行-->
+            <div class="third third1">
+                <div class="f-left fl">
+                    <img src="images/data3_left.png" alt="" class="im-animate del-im3">
+                </div>
+                <div class="f-right fr f-right-yd3">
+                    <div class="f-right1 fl"></div>
+                    <div class="f-right2 fl">
+                        <h3 class="three">待遇丰厚，薪资看涨！</h3>
+                        <h4 class="three">PAY ROSE SOON</h4>
+                        <p>有产品的地方就有设计师，相较学历，设计岗位更重视实力！靠技术吃饭，高薪晋升速度杠杠滴！以北京为例，全能设计师平均月薪<br>入行：¥6000+；2年后：¥9000+；主管级：¥10000+；总监级：¥15000</p>
+                        <a href="http://d.itcast.cn/a" target="_blank">咨询其他地区薪资</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--课程介绍-->
+    <div class="introduce">
+        <!--左侧-->
+        <div class="intr-left fl">
+            <div class="left-con">
+                <img src="images/tech_01.png" alt="">
+                <p>竞争者可以模仿，但永远无法超越</p>
+            </div>
+            </div>
+
+        <!--右侧-->
+        <div class="intr-right fl">
+            <div class="right-con">
+                <div class="hov">
+                    <img src="images/tech_02.png" alt="">
+                    <p>软件深入解析</p>
+                    <span>课程设置</span>
+                </div>
+                <div class="hov">
+                    <img src="images/tech_03.png" alt="">
+                    <p>艺术与设计的结合</p>
+                    <span>查看作品</span>
+                </div>
+                <div class="mar hov">
+                    <img src="images/tech_04.png" alt="">
+                    <p>软件深入解析</p>
+                    <span>课程设置</span>
+                </div>
+                <div class="mar hov">
+                    <img src="images/tech_05.png" alt="">
+                    <p>设计思维训练</p>
+                    <span>是否合适</span>
+                </div>
+                <div class="mar hov">
+                    <img src="images/tech_06.png" alt="">
+                    <p>全程真实案例驱动教学</p>
+                    <span>咨询案例</span>
+                </div>
+                <div class="mar hov">
+                    <img src="images/tech_07.png" alt="">
+                    <p>课程每月更新优化</p>
+                    <span>最新优化</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--学员作品展示-->
+    <!--<div class="works-show">-->
+        <!--<div class="works-show-top bx">-->
+            <!--<img src="images/works.png" alt="">-->
+        <!--</div>-->
+        <!--<div class="works-show-bom"></div>-->
+    <!--</div>-->
+    
+</div>
+<!----- 页面主体板块end ------>
+
+<!--页面底部start-->
+<!--报名部分-->
+<div class="baoming">
+    <h2>每期开班座位有限,预报名可优先享有占座特权哦！</h2>
+
+    <div class="W_form">
+        <form id="addform" method="post">
+            <div class="left">
+                <ul>
+                    <li>
+                        <span class="l_text"><s
+                                style="color:#e00000; font-size:15px; text-decoration:none; line-height:40px; padding-right:5px;">*</s>真实姓名</span>
+                        <input type="text" placeholder="我们期待更了解您" name="name" id="realname">
+                    </li>
+                    <li>
+                        <span class="l_text"><s
+                                style="color:#e00000; font-size:15px; text-decoration:none; line-height:40px; padding-right:5px;">*</s>联系手机</span>
+                        <input type="text" placeholder="我们和您一样讨厌骚扰电话" name="tel" id="phone">
+                    </li>
+                    <li>
+                        <span class="l_text"><s
+                                style="color:#e00000; font-size:15px; text-decoration:none; padding-right:5px;">*</s>上课地址</span>
+                        <select name="aid" id="address" style="width:212px; height:36px; display:block;">
+                            <option value="">请选择上课地址</option>
+                            <option value="3">北京校区</option>
+                            <option value="4">广州校区</option>
+                            <option value="5">上海校区</option>
+                            <option value="7">西安校区</option>
+                            <option value="14">郑州校区</option>
+                            <option value="15">武汉校区</option>
+                            <option value="16">长沙校区</option>
+                            <option value="19">深圳校区</option>
+                            <option value="21">南京校区</option>
+                        </select>
+                    </li>
+                    <li>
+                        <span class="l_text"><s
+                                style="color:#e00000; font-size:15px; text-decoration:none; line-height:40px; padding-right:11px;">*</s>QQ号码</span>
+                        <input type="text" placeholder="我们将尽快与您联系" name="qq" id="qq">
+                        <input type="hidden" name="cid" value="22">
+                        <input type="hidden" name="come" value="前端与移动开发专题">
+                        <input type="hidden" name="url" value="" id="u">
+                    </li>
+                </ul>
+                <br>
+            </div>
+            <div class="right">
+                <input type="button" value="现在预报名" onclick="check()">
+
+                <p>温馨提示：请保持手机畅通，咨询老师将为您提供专属的一对一报名服务。</p>
+            </div>
+        </form>
+    </div>
+</div>
+<!--黑马校区部分-->
+<div class="hm_school">
+    <div class="h_s_in banxin">
+        <h2 class="sch_hd" style='opacity: 1;left: 0;'>不一样的城市<br><strong>一样的<b>黑马程序员</b></strong></h2>
+
+        <div class="t_content ">
+            <div class="t_c_bg"></div>
+            <div class="txt_con">
+                <div>
+                    <h3>家门口的 <img src="images/hm_sh.png"></h3>
+                    学习择业更方便
+                </div>
+                <p class="pbg">相同的课程大纲</p>
+
+                <p>黑马每年都会进行课程的升级和更新，一旦更新，全国所有校区课程将统一使用最新教学大纲。</p>
+
+                <p class="pbg">相同的教学管理</p>
+
+                <p>黑马只有直营，不搞加盟！总部直接派讲师到分校区授课，采用相同的培训模式和课程。</p>
+
+                <p class="pbg">相同的师资力量</p>
+
+                <p>分校区的师资在同一套教师培训体系下完成培训，保障师资质量。</p>
+
+                <p class="pbg">相同的就业服务</p>
+
+                <p>一地学习，全国就业！ 毕业学员将由总部组织到北上广就业，确保高薪就业。</p>
+            </div>
+        </div>
+        <div class="map" style='opacity: 1'>
+            <ul>
+                <li class="cur" style="right:208px; top:240px;"><span class="light">&nbsp;</span> <strong>北京</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/bj.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:90px; top:107px;"><span class="light">&nbsp;</span> <strong>哈尔滨</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/hrb.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:187px; top:330px;"><span class="light">&nbsp;</span> <strong>济南</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/jn.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:90px; bottom:265px;"><span class="light">&nbsp;</span> <strong>上海</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/sh.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:128px; bottom:242px;"><span class="light">&nbsp;</span> <strong
+                        style="top:15px;">杭州</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/hz.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:145px; top:397px;"><span class="light">&nbsp;</span> <strong
+                        style="top:-10px; right:-58px;">南京</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/nj.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:190px; bottom:92px;"><span class="light">&nbsp;</span> <strong>深圳</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/sz.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:247px; top:393px;"><span class="light">&nbsp;</span> <strong>郑州</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/zz.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:254px; bottom:237px;"><span class="light">&nbsp;</span> <strong>武汉</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/wh.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:252px; bottom:194px;"><span class="light">&nbsp;</span> <strong>长沙</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/cs.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:224px; bottom:109px;"><span class="light">&nbsp;</span> <strong
+                        style="left:-35px;">广州</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/gz.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:329px; bottom:235px;"><span class="light">&nbsp;</span> <strong
+                        style="left:-35px;">重庆</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/cq.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:325px; bottom:301px;"><span class="light">&nbsp;</span> <strong
+                        style="left:-35px;">西安</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/xa.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:420px; bottom:213px;"><span class="light">&nbsp;</span> <strong
+                        style="left:-35px;">成都</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/cd.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:223px; top:295px;" class=""><span class="light">&nbsp;</span> <strong
+                        style="left:30px;">石家庄</strong>
+
+                    <div class="li_hov" style="display: none;">
+                        <a href="javascript:;" target="_blank"><img src="images/sjz.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:170px; top:420px;"><span class="light">&nbsp;</span> <strong
+                        style="left:-49px;">合肥</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/hefei.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:265px; top:300px;" class=""><span class="light">&nbsp;</span> <strong
+                        style="left:-5px;top: 35px">太原</strong>
+
+                    <div class="li_hov" style="display: none;">
+                        <a href="javascript:;" target="_blank">
+                            <img src="images/ty.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:140px; bottom:136px;" class=""><span class="light">&nbsp;</span> <strong
+                        style="left:34px;top: 8px">厦门</strong>
+
+                    <div class="li_hov" style="display: none;">
+                        <a href="javascript:;" target="_blank">
+                            <img src="images/xm.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--底部部分-->
+<div class="footer">
+    <div class="foot_ch about">
+        <div class="div_list">
+            <h3>关于黑马</h3>
+            <ul>
+                <li><a href="/about/about.html" target="_blank" class="a_gd">黑马概况</a></li>
+                <li><a href="/about/develop.html" target="_blank" class="a_gd">发展历程</a></li>
+                <li><a href="/special/hmschool/index.shtml" target="_blank" class="a_gd">联系我们</a></li>
+            </ul>
+        </div>
+        <div class="div_list">
+            <h3>学习资源</h3>
+            <ul>
+                <li><a href="http://yun.itheima.com/Course" target="_blank" class="a_gd">免费视频下载</a></li>
+                <li><a href="http://yun.itheima.com/Open" target="_blank" class="a_gd">免费公开课</a></li>
+                <li><a href="http://yun.itheima.com/Map" target="_blank" class="a_gd">学习路线图</a></li>
+            </ul>
+        </div>
+        <div class="div_list">
+            <h3>如何报名</h3>
+            <ul>
+                <li><a href="/flow/flow.html" target="_blank" class="a_gd">报名流程</a></li>
+                <li><a href="/flow/flowbasic.html" target="_blank" class="a_gd">报名须知</a></li>
+                <li><a href="/flow/flowhj.html" target="_blank" class="a_gd">住宿环境</a></li>
+            </ul>
+        </div>
+        <div class="div_list div_ewm">
+            <div class="ewmbox">
+                <a href="javascript:;" target="_blank"><span class="iconbox"><i class='iconfont'>&#xe62e;</i></span>
+                    <span class="icon_tt">QQ空间</span></a>
+
+                <div class="ewm">
+                    <img src="images/qq.jpg">
+
+                    <p><span>扫描二维码</span><br>关注黑马程序员QQ空间账号</p>
+                </div>
+            </div>
+            <div class="ewmbox">
+                <span class="iconbox iconbox2"><i class='iconfont'>&#xe7e5;</i></span>
+                <span class="icon_tt">微信公众号</span>
+
+                <div class="ewm">
+                    <img src="images/wx.jpg">
+
+                    <p><span>扫描二维码</span><br>关注黑马程序员微信公众账号</p>
+                </div>
+            </div>
+            <div class="ewmbox">
+                <a href="javascript:;" target="_blank"><span class="iconbox iconbox3"><i class='iconfont'>
+                    &#xe699;</i></span>
+                    <span class="icon_tt">新浪微博</span></a>
+
+                <div class="ewm">
+                    <img src="images/wb.jpg">
+
+                    <p><span>扫描二维码</span><br>关注黑马程序员新浪微博账号</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="foot_ch add">
+        <p>江苏传智播客教育科技有限公司 版权所有Copyright 1999-2018, CSDN.NET, All Rights Reserved <a href="" style="color:#188eee;">苏ICP备16007882</a>
+            <span id="cnzz_stat_icon_3144200"><a href="javascript:;" target="_blank" title="站长统计"><img border="0"
+                                                                                                       hspace="0"
+                                                                                                       vspace="0"
+                                                                                                       src="images/pic1.gif"></a></span>
+        </p>
+    </div>
+</div>
+<script>
+
+    $('.map>ul>li').mouseenter(function () {
+        $(this).find('.li_hov').css('display', 'block');
+    }).mouseleave(function () {
+        $(this).find('.li_hov').css('display', 'none');
+    });
+
+    $('.ewmbox').mouseenter(function () {
+        $(this).find('.ewm').css('display', 'block');
+        $(this).find('.iconbox').stop().animate({'backgroundColor': '#0a8bb8'}, 500)
+        $(this).find('.iconbox').css('cursor', 'pointer')
+    }).mouseleave(function () {
+        $(this).find('.ewm').css('display', 'none');
+        $(this).find('.iconbox').stop().animate({'backgroundColor': '#486687'}, 500)
+    });
+</script>
+<!--页面底部end-->
+</body>
+</html>

@@ -1,0 +1,225 @@
+.WhyChose {
+    width: 100%;
+    height: 934px;
+    background-color: #041527;
+    position: relative;
+}
+.WhyChose .ufo {
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+.WhyChose .ufo2 {
+    position: absolute;
+    left: 50px;
+    bottom: 200px;
+}
+.WhyText {
+    height: 854px;
+}
+
+.WhyText .hd {
+    background: url(../images/hd_bg.png) no-repeat left bottom;
+    height: 141px;
+    position: absolute;
+    display: inline-block;
+    left: 310px;
+}
+
+.WhyChose .hd h2 {
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 60px;
+    color: #fff;
+    display: inline-block;
+    padding: 0 100px;
+    border-bottom: 3px solid #fff;
+}
+
+.why {
+    height: 713px;
+    position: absolute;
+    bottom: -400px;
+    width: 1200px;
+    opacity: 0;
+}
+
+.why .whyul {
+    width: 1200px;
+    height: 500px;
+    position: relative;
+}
+
+.whyul li {
+    width: 270px;
+    height: 448px;
+    float: left;
+    margin-right: 40px;
+    opacity: 0;
+    transition:margin-top 0.5s
+}
+.whyul li:last-child {
+    margin-right: 0;
+}
+.whyul li:hover {
+    margin-top: -10px;
+}
+
+.whyul li:hover .li1_box {
+    background: url("../images/box1_bg.gif") no-repeat;
+}
+.whyul li:hover .li2_box {
+    background: url("../images/box1_bg2.gif") no-repeat;
+}
+.whyul li:hover .li3_box {
+    background: url("../images/box1_bg3.gif") no-repeat;
+}
+.whyul li:hover .li4_box {
+    background: url("../images/box1_bg4.gif") no-repeat;
+}
+
+.whyul .whyul_li1 .li1_box {
+     background: url("../images/box1_bg.jpg") no-repeat;
+     width: 270px;
+     height: 353px;
+ }
+.whyul .whyul_li2 .li2_box {
+    background: url("../images/box1_bg2.jpg") no-repeat;
+    width: 270px;
+    height: 353px;
+}
+.whyul .whyul_li3 .li3_box {
+    background: url("../images/box1_bg3.jpg") no-repeat;
+    width: 270px;
+    height: 353px;
+}
+.whyul .whyul_li4 .li4_box {
+    background: url("../images/box1_bg4.jpg") no-repeat;
+    width: 270px;
+    height: 353px;
+}
+
+.li1_box h3 {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 32px 0 5px 32px;
+    color: #0DA9EE;
+}
+.li2_box h3 {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 32px 0 5px 32px;
+    color: #F5C605;
+}
+.li3_box h3 {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 32px 0 5px 32px;
+    color: #DD571C;
+}
+.li4_box h3 {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 32px 0 5px 32px;
+    color: #0DED98;
+}
+
+.li1_box p {
+    font-size: 20px;
+    line-height: 26px;
+    padding-left: 32px;
+    color: #fff;
+}
+.li2_box p {
+    font-size: 20px;
+    line-height: 26px;
+    padding-left: 32px;
+    color: #fff;
+}
+.li3_box p {
+    font-size: 20px;
+    line-height: 26px;
+    padding-left: 32px;
+    color: #fff;
+}
+.li4_box p {
+    font-size: 20px;
+    line-height: 26px;
+    padding-left: 32px;
+    color: #E0FE00;
+}
+
+.whyul_li1 .b1 {
+    font-size: 26px;
+    padding: 5px 0;
+    color: #0DA9EE;
+    text-align: center;
+}
+.whyul_li2 .b1 {
+    font-size: 26px;
+    padding: 5px 0;
+    color: #F5C605;
+    text-align: center;
+}
+.whyul_li3 .b1 {
+    font-size: 26px;
+    padding: 5px 0;
+    color: #DD571C;
+    text-align: center;
+}
+.whyul_li4 .b1 {
+    font-size: 26px;
+    padding: 5px 0;
+    color: #0DED98;
+    text-align: center;
+}
+
+.whyul_li1 .b2 {
+    font-size: 18px;
+    line-height: 26px;
+    color: #fff;
+    text-align: center;
+}
+.whyul_li2 .b2 {
+    font-size: 18px;
+    line-height: 26px;
+    color: #fff;
+    text-align: center;
+}
+.whyul_li3 .b2 {
+    font-size: 18px;
+    line-height: 26px;
+    color: #fff;
+    text-align: center;
+}
+.whyul_li4 .b2 {
+    font-size: 18px;
+    line-height: 26px;
+    color: #fff;
+    text-align: center;
+}
+.p_txt {
+    font-size: 18px;
+    line-height: 26px;
+    color: #fff;
+    margin-top: 30px;
+    text-align: center;
+}
+.a_btn {
+    width: 393px;
+    height: 63px;
+    line-height: 63px;
+    text-align: center;
+    display: block;
+    margin: 40px auto 0;
+    background-color: #E1FF00;
+    border-radius: 50px;
+    font-size: 26px;
+    color: #112131;
+    font-weight: bold;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+

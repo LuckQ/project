@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="icon" href="images/favicon.ico"/>
+    <title>黑马程序员人工智能+Python培训-聚集众多人工智能培训Python培训精英讲师|人工智能培训| Python培训</title>
+    <meta name="keywords" content="人工智能培训,Python培训,Python基础教程培训,Python爬虫培训"/>
+    <meta name="description" content="人工智能时代来临,黑马程序员率先推出人工智能+Python培训, 人工智能培训,Python培训,Python基础教程培训,Python爬虫培训，并为大家提供人工智能培训 班,Python培训,Python培训班,Python爬虫培训班,Python基础教程培训服务。"/>
+    <link rel="stylesheet" type="text/css" href="css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" href="css/frontWebFooter.css"/>
+    <link rel="stylesheet" href="css/frontWebHmSchool.css"/>
+
+    <script src="jquery-1.12.1.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/lunbo.js"></script>
+</head>
+<body>
+<!--顶部广告开始-->
+<div class="top">
+    <div class="inner">
+        <span>入门更简单，就业更便捷！3月16日，广州校区 人工智能+Python基础班抢报中</span>
+        <a href="" target="_blank" class="serve">点击咨询</a>
+        <a href="javascript:;" class="close" title="关闭"></a>
+    </div>
+</div>
+<!--顶部广告结束-->
+
+<!--顶部导航开始-->
+<div class="nav">
+   <div class="w">
+       <a href="" target="_blank"><img src="images/logo.png" alt=""/></a>
+       <ul>
+           <li class="first" style="font-family:'微软雅黑'">人工智能+Python培训</li>
+           <li><a href="" target="_blank">学术概论</a></li>
+           <li><a href="" target="_blank">就业前景</a></li>
+           <li><a href="" target="_blank">课程大纲</a></li>
+           <li><a href="" target="_blank">免费资源获取</a></li>
+           <li><a href="" target="_blank">报名流程</a></li>
+           <li class="last"><a href="" target="_blank">技术社区</a></li>
+       </ul>
+   </div>
+</div>
+<!--顶部导航结束-->
+
+<!--导航开始-->
+<div class="jump">
+    <div class="current_j"></div>
+
+    <ul>
+        <li><a href="../shouye/index.html">首页</a></li>
+        <li><a href="../ui-project/ui-index.html">UI设计</a></li>
+        <li><a href="../frontWeb.html">Web前端</a></li>
+        <li><a href="#">Python</a></li>
+        <li><a href="../PHP/PHP/web项目.html">PHP</a></li>
+
+    </ul>
+</div>
+<script>
+    var jump = document.getElementsByClassName('jump')[0];
+    var ul_j = jump.children[1];
+    var current_j = jump.children[0];
+    var liArr = ul_j.children;
+    var count = 0;
+
+    for (var i = 0; i < liArr.length; i++) {
+        liArr[i].index = i;
+        liArr[i].onmouseover = function () {
+            fn_j(current_j, 80 * this.index);
+        };
+
+    };
+
+    function fn_j(ele, position) {
+        clearInterval(ele.timer);
+        ele.timer = setInterval(function () {
+            var step = (position - ele.offsetTop) / 10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            ele.style.top = ele.offsetTop + step + 'px';
+            if (Math.abs(position - ele.offsetTop) <= Math.abs(step)) {
+                ele.style.top = position + 'px';
+                clearInterval(ele.timer)
+            }
+        }, 10)
+
+    };
+
+    $(function(){
+        $('.jump').mouseenter(function(){
+            $(this).stop().animate({'left':0},500);
+        }).mouseleave(function(){
+            $(this).stop().animate({'left':'-180px'});
+        })
+    });
+
+</script>
+
+<!--导航结束-->
+<!--大广告开始-->
+<div class="box">
+
+    <div class="imgbox">
+        <!--第一张广告-->
+        <div class="box2">
+            <div class="dong">
+                <p class="p1">业内率先推出</p>
+                <img src="images/ban1_img4.png" alt=""/>
+                <p class="p2">
+                    2015年，Python开始在国内流行。
+                    <br>
+                    历时一年课程研发，2016年4月，我们开设人工智能+Python课程培训，
+                    <br>
+                    至今课程已革新4次，培养千人
+                    <span>(截止到2018年1月)</span><br>
+            </div>
+
+                <a href="" target="_blank" class="a1">咨询我们</a>
+                <a href="" target="_blank" class="a2">我要报名</a>
+                <img src="images/ban1_img1.png" alt="" class="img3"/>
+                <img src="images/ban1_img2.png" alt="" class="img4"/>
+                <img src="images/ban1_img3.jpg" alt="" class="img2"/>
+
+        </div>
+
+        <!--第二张广告-->
+        <div class="box1">
+            <!--<div class="hc">-->
+            <p class="p1">5个月后的你</p>
+            <p class="p2">会感谢现在的自己</p>
+            <p class="p3">聪明的人眼光既远又广，以至于他们可以在未来的道路上扬眉吐气<br>这些人正如写Python的人们，他们从“全民学Python”中意识到人工智能+Python<br>钱景必然不可限量。<br>机会来了，就要牢牢抓住</p>
+            <!--</div>-->
+            <a href="" target="_blank" class="a1 a">咨询我们</a>
+            <a href="" target="_blank" class="a2 a">我要报名</a>
+            <img src="images/ban2_img1.jpg" alt="" class="img1"/>
+            <img src="images/ban2_img2.png" alt="" class="img2"/>
+
+
+        </div>
+    </div>
+
+    <ol class="imgraius">
+        <li class="aaa"></li>
+        <li class="bbb"></li>
+    </ol>
+
+
+</div>
+<!--大广告结束-->
+
+<!--开设校区开始-->
+<div class="school">
+    <!--<img src="images/jietu.png" alt=""/>283.8-->
+    <div class="w">
+        <div class="subject">
+            <div class="left">
+                <p>
+                    <span class="span1">————</span>
+                    "开设校区"
+                    <span class="span2">————</span>
+                </p>
+                <div class="mytab">
+                    <a href="javascript:;" class="have now">北京</a>
+                    <a href="javascript:;" class="have">深圳</a>
+                    <a href="javascript:;" class="have">上海</a>
+                    <a href="javascript:;" class="no">哈尔滨</a>
+                    <a href="javascript:;" class="no">济南</a>
+                    <a href="javascript:;" class="no">重庆</a>
+                    <a href="javascript:;" class="have">郑州</a>
+                    <a href="javascript:;" class="have">武汉</a>
+                    <a href="javascript:;" class="have">西安</a>
+                    <a href="javascript:;" class="have">广州</a>
+                    <a href="javascript:;" class="have">长沙</a>
+                    <a href="javascript:;" class="have">杭州</a>
+                    <a href="javascript:;" class="have">南京</a>
+                    <a href="javascript:;" class="no">成都</a>
+                    <a href="javascript:;" class="no">石家庄</a>
+                    <a href="javascript:;" class="no">合肥</a>
+                    <a href="javascript:;" class="no">太原</a>
+                    <a href="javascript:;" class="no">澳门</a>
+                </div>
+            </div>
+            <div class="right">
+                <div class="ulbox">
+                    <ul class="ul1">
+                        <li>
+                            <h3>北京</h3>
+                            <p class="p1">人工智能+Python</p>
+                            <p>2018-03-08</p>
+                            <p class="p2">
+                                <a href="http://d.itcast.cn/a" target="_blank">已爆满</a>
+                            </p>
+
+                        </li>
+                        <li>
+                            <h3>北京</h3>
+                            <p class="p1">人工智能+Python</p>
+                            <p>2018-03-08</p>
+                            <p class="p2">
+                                <a href="http://d.itcast.cn/a" target="_blank">已爆满</a>
+                            </p>
+                        </li>
+                        <li>
+                            <h3>北京</h3>
+                            <p class="p1">人工智能+Python</p>
+                            <p>2018-03-08</p>
+                            <p class="p2">
+                                <a href="http://d.itcast.cn/a" target="_blank">已爆满</a>
+                            </p>
+                        </li>
+                        <li>
+                            <h3>北京</h3>
+                            <p class="p1">人工智能+Python</p>
+                            <p>2018-03-08</p>
+                            <p class="p2">
+                                <a href="http://d.itcast.cn/a" target="_blank">已爆满</a>
+                            </p>
+                        </li>
+                        <li style="position: relative;top: -208px;left: 443px">
+                            <h3>北京</h3>
+                            <p class="p1">人工智能+Python</p>
+                            <p>2018-03-08</p>
+                            <p class="p2">
+                                <a href="http://d.itcast.cn/a" target="_blank">已爆满</a>
+                            </p>
+                        </li>
+                        <li style="position: relative;top: -208px;left: 443px">
+                            <h3>北京</h3>
+                            <p class="p1">人工智能+Python</p>
+                            <p>2018-03-08</p>
+                            <p class="p2">
+                                <a href="http://d.itcast.cn/a" target="_blank">已爆满</a>
+                            </p>
+                        </li>
+                        <li style="position: relative;top: -208px;left: 443px">
+                            <h3>北京</h3>
+                            <p class="p1">人工智能+Python</p>
+                            <p>2018-03-08</p>
+                            <p class="p2">
+                                <a href="http://d.itcast.cn/a" target="_blank">已爆满</a>
+                            </p>
+                        </li>
+                        <li style="position: relative;top: -208px;left: 443px">
+                            <h3>北京</h3>
+                            <p class="p1">人工智能+Python</p>
+                            <p>2018-03-08</p>
+                            <p class="p2">
+                                <a href="http://d.itcast.cn/a" target="_blank">已爆满</a>
+                            </p>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--开设校区部分结束-->
+
+
+<!--国务院政策部分开始-->
+<div class="tongji">
+    <div class="w">
+        <p class="p1" style="font-family: '微软雅黑">国务院出台政策&nbsp;推动“人工智能+Python发展红利”</p>
+        <img src="images/icon.jpg" alt="" style="margin-left: 50%"/>
+        <img src="images/box2_img1.jpg" alt=""/>
+        <p class="p2">  受大环境影响，各大企业都在招募Python人才，如排名靠前的互联网公司饿了么、小米、360、腾讯、阿里巴巴、陌陌、美团和知乎等等。<br>
+            从各大招聘网站可以看出：人工智能+Python岗位<span style="color: #4f96e1">年薪至少在15-20w之间</span>，而且除了北、上、广、深外，杭州和合肥等二、三线城市的待遇正在与一线城市持平 。<br></p>
+
+            <p class="p3">未来，无论你身处何地，都能享受到全国人工智能+Python带来的“发展红利”。</p>
+    </div>
+
+</div>
+<!--国务院政策部分结束-->
+
+
+<!--全民学Python部分开始-->
+<div class="people">
+    <div class="w">
+    <p class="pp">传统教育改革&nbsp;开启“全民学Python”时代</p>
+    <img src="images/icon.jpg" alt="" style="margin-left: 50%"/>
+    <ul>
+        <li class="li1">
+            <div class="up">
+                <img src="images/box1_img1.jpg" alt=""/>
+            </div>
+            <div class="bottom">
+                <span>01</span>
+                <div class="xiaoxue">
+                    <p class="p1">小学</p>
+                    <p class="p2">Python语言课程化也将成为孩子学习的一种趋势。其中山东省最新出版的小学信息技术六年级教材已加入Python 内容</p>
+                </div>
+            </div>
+        </li>
+        <li class="li2">
+            <div class="up">
+                <img src="images/box1_img2.jpg" alt=""/>
+            </div>
+            <div class="bottom">
+                <span>02</span>
+                <div class="xiaoxue">
+                    <p class="p1">高中</p>
+                    <p class="p2">浙江省信息技术课程改革方案出台，Python 确定进入浙江省信息技术高考，从2018年起信息技术教材编程语言替换为Python</p>
+                </div>
+            </div>
+        </li>
+        <li class="li3">
+            <div class="up">
+                <img src="images/box1_img3.jpg" alt=""/>
+            </div>
+            <div class="bottom">
+                <span>03</span>
+                <div class="xiaoxue">
+                    <p class="p1">大学</p>
+                    <p class="p2">教育部考试中心于2017年10月发布通知，决定自 2018年3月起，在计算机二级考试加入了“Python 语言程序设计”科目</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <input type="button" value="了解更多Python机遇" id="btn"/>
+    </div>
+</div>
+<!--全名学Python部分结束-->
+
+
+<!--高薪逆袭部分开始-->
+<div class="money">
+    <p style="font-size: 36px;text-align: center;margin-top: 156px;font-family: '微软雅黑';opacity: 0">曾经和你一样的人  现已高薪逆袭</p>
+    <img src="images/icon.jpg" alt="" style="margin-left: 48%"/>
+</div>
+<!--高薪逆袭部分结束-->
+
+<!--机遇部分开始-->
+<div class="jiyu">
+    <ul style="margin: 30px 0">
+        <li class="li1">
+            <div class="top1 top"></div>
+            <h3>刚毕业，就业迷茫</h3>
+            <p>
+                "大学/高中毕业，迷茫群体，"
+                <br>
+                "看不到就业的方向，期待学一门"
+                <br>
+                "有前景的技术"
+            </p>
+        </li>
+        <li class="li2">
+            <div class="top2 top"></div>
+            <h3>跨专业转行</h3>
+            <p>
+                "非计算机专业迫切要转行群体，"
+                <br>
+                "期待学一门高薪、有前景、"
+                <br>
+                "易学的技术"
+            </p>
+        </li>
+        <li class="li3">
+            <div class="top3 top"></div>
+            <h3>0基础&nbsp;逻辑思维能力强</h3>
+            <p>
+                "逻辑思维能力强，"
+                <br>
+                "想通过学一门技术来获得"
+                <br>
+                "高薪能力"
+            </p>
+        </li>
+
+    </ul>
+    <ul>
+        <li class="li4">
+            <div class="top top4"></div>
+            <h3>数学/统计学/物理专业</h3>
+            <p>
+                "学过数学、大数据收集或分析、"
+                <br>
+                "统计学、物理学等"
+                <br>
+                "是学这门课程的最佳人选"
+            </p>
+        </li>
+        <li class="li5">
+            <div class="top5 top"></div>
+            <h3>传统运维转开发</h3>
+            <p>
+                "如果你之前从事的是运维工作"
+                <br>
+                "遇到瓶颈想转开发岗位"
+                <br>
+                "那Python将帮你成功转型"
+            </p>
+        </li>
+        <li class="li6">
+            <div class="top6 top"></div>
+            <h3>转型做Web全栈开发</h3>
+            <p>
+                "如果你未来职业生涯致力于"
+                <br>
+                "做Web全栈开发人才"
+                <br>
+                "Python会带你成功转型"
+            </p>
+        </li>
+    </ul>
+</div>
+<!--机遇部分结束-->
+
+<!--Python入门更容易部分开始-->
+<div class="easy">
+    <div class="box_In">
+        <div class="box_hd">
+            <h2>初学编程&nbsp;&nbsp;选Python入门更容易</h2>
+            <img src="images/icon.jpg" alt=""/>
+        </div>
+        <div class="btm">
+            <div class="box_In">
+                <h2>
+                    <span>培训前</span>
+                    "学员基本情况统计"
+                </h2>
+                <ul>
+
+                    <li class="lia">
+                        <img src="images/box4_img2.jpg" alt="" class="imga"/>
+                        <p>
+                            <b>培训前</b>
+                            所学专业统计
+                        </p>
+                    </li>
+                    <li class="lib">
+                        <img src="images/box4_img3.jpg" alt="" class="imgb"/>
+                        <p>
+                            <b>培训前</b>
+                            工作经验统计
+                        </p>
+                    </li>
+                    <li>
+                        <img src="images/box4_img4.jpg" alt="" class="imgc"/>
+                        <p>
+                            <b>培训前</b>
+                            薪资统计
+                        </p>
+                    </li>
+
+                </ul>
+                <p class="p1">
+                    Python编程简单直接，更适合初学编程者，让初学者专注于编程逻辑，而不是困惑于晦涩的语法细节上。<br>
+                    以上表格基于已报名学员基本情况统计，虽然他们培训前大部分都基础薄弱，但在培训后都实现了高薪逆袭。
+                </p>
+            </div>
+
+
+
+
+        </div>
+
+
+        <input type="button" value="我适合学习吗" id="btn1"/>
+    </div>
+</div>
+
+
+
+<!--Python入门更容易部分结束-->
+
+
+
+<!--就业部分开始-->
+<div class="job">
+    <div class="box_In">
+        <div class="box_hd">
+            <h2>我们已培养上千人高薪就业</h2>
+            <img src="images/icon.jpg" alt=""/>
+        </div>
+        <img src="images/box5_img1.jpg" alt=""/>
+        <p style="color: grey;font-size: 16px;text-align: center;margin-top: 20px;font-family: '微软雅黑">已毕业部分班级薪资显示（截止到2017年12月）</p>
+    </div>
+    <input type="button" value="查看全部就业薪资" id="btn2"/>
+
+</div>
+<!--就业部分结束-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--报名部分-->
+<div class="baoming">
+    <h2>每期开班座位有限,预报名可优先享有占座特权哦！</h2>
+
+    <div class="W_form">
+        <form id="addform" method="post">
+            <div class="left">
+                <ul>
+                    <li>
+                        <span class="l_text"><s
+                                style="color:#e00000; font-size:15px; text-decoration:none; line-height:40px; padding-right:5px;">*</s>真实姓名</span>
+                        <input type="text" placeholder="我们期待更了解您" name="name" id="realname">
+                    </li>
+                    <li>
+                        <span class="l_text"><s
+                                style="color:#e00000; font-size:15px; text-decoration:none; line-height:40px; padding-right:5px;">*</s>联系手机</span>
+                        <input type="text" placeholder="我们和您一样讨厌骚扰电话" name="tel" id="phone">
+                    </li>
+                    <li>
+                        <span class="l_text"><s
+                                style="color:#e00000; font-size:15px; text-decoration:none; padding-right:5px;">*</s>上课地址</span>
+                        <select name="aid" id="address" style="width:212px; height:36px; display:block;">
+                            <option value="">请选择上课地址</option>
+                            <option value="3">北京校区</option>
+                            <option value="4">广州校区</option>
+                            <option value="5">上海校区</option>
+                            <option value="7">西安校区</option>
+                            <option value="14">郑州校区</option>
+                            <option value="15">武汉校区</option>
+                            <option value="16">长沙校区</option>
+                            <option value="19">深圳校区</option>
+                            <option value="21">南京校区</option>
+                        </select>
+                    </li>
+                    <li>
+                        <span class="l_text"><s
+                                style="color:#e00000; font-size:15px; text-decoration:none; line-height:40px; padding-right:11px;">*</s>QQ号码</span>
+                        <input type="text" placeholder="我们将尽快与您联系" name="qq" id="qq">
+                        <input type="hidden" name="cid" value="22">
+                        <input type="hidden" name="come" value="前端与移动开发专题">
+                        <input type="hidden" name="url" value="" id="u">
+                    </li>
+                </ul>
+                <br>
+            </div>
+            <div class="right">
+                <input type="button" value="现在预报名" onclick="check()">
+
+                <p>温馨提示：请保持手机畅通，咨询老师将为您提供专属的一对一报名服务。</p>
+            </div>
+        </form>
+    </div>
+</div>
+<!--黑马校区部分-->
+<div class="hm_school">
+    <div class="h_s_in banxin">
+        <h2 class="sch_hd" style='opacity: 1;left: 0;'>不一样的城市<br><strong>一样的<b>黑马程序员</b></strong></h2>
+
+        <div class="t_content ">
+            <div class="t_c_bg"></div>
+            <div class="txt_con">
+                <div>
+                    <h3>家门口的 <img src="images/hm_sh.png"></h3>
+                    学习择业更方便
+                </div>
+                <p class="pbg">相同的课程大纲</p>
+
+                <p>黑马每年都会进行课程的升级和更新，一旦更新，全国所有校区课程将统一使用最新教学大纲。</p>
+
+                <p class="pbg">相同的教学管理</p>
+
+                <p>黑马只有直营，不搞加盟！总部直接派讲师到分校区授课，采用相同的培训模式和课程。</p>
+
+                <p class="pbg">相同的师资力量</p>
+
+                <p>分校区的师资在同一套教师培训体系下完成培训，保障师资质量。</p>
+
+                <p class="pbg">相同的就业服务</p>
+
+                <p>一地学习，全国就业！ 毕业学员将由总部组织到北上广就业，确保高薪就业。</p>
+            </div>
+        </div>
+        <div class="map" style='opacity: 1'>
+            <ul>
+                <li class="cur" style="right:208px; top:240px;"><span class="light">&nbsp;</span> <strong>北京</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/bj.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:90px; top:107px;"><span class="light">&nbsp;</span> <strong>哈尔滨</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/hrb.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:187px; top:330px;"><span class="light">&nbsp;</span> <strong>济南</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/jn.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:90px; bottom:265px;"><span class="light">&nbsp;</span> <strong>上海</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/sh.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:128px; bottom:242px;"><span class="light">&nbsp;</span> <strong
+                        style="top:15px;">杭州</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/hz.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:145px; top:397px;"><span class="light">&nbsp;</span> <strong
+                        style="top:-10px; right:-58px;">南京</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/nj.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:190px; bottom:92px;"><span class="light">&nbsp;</span> <strong>深圳</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/sz.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:247px; top:393px;"><span class="light">&nbsp;</span> <strong>郑州</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/zz.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:254px; bottom:237px;"><span class="light">&nbsp;</span> <strong>武汉</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/wh.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:252px; bottom:194px;"><span class="light">&nbsp;</span> <strong>长沙</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/cs.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:224px; bottom:109px;"><span class="light">&nbsp;</span> <strong
+                        style="left:-35px;">广州</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/gz.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:329px; bottom:235px;"><span class="light">&nbsp;</span> <strong
+                        style="left:-35px;">重庆</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/cq.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:325px; bottom:301px;"><span class="light">&nbsp;</span> <strong
+                        style="left:-35px;">西安</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/xa.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:420px; bottom:213px;"><span class="light">&nbsp;</span> <strong
+                        style="left:-35px;">成都</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/cd.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:223px; top:295px;" class=""><span class="light">&nbsp;</span> <strong
+                        style="left:30px;">石家庄</strong>
+
+                    <div class="li_hov" style="display: none;">
+                        <a href="javascript:;" target="_blank"><img src="images/sjz.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:170px; top:420px;"><span class="light">&nbsp;</span> <strong
+                        style="left:-49px;">合肥</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/hefei.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:265px; top:300px;" class=""><span class="light">&nbsp;</span> <strong
+                        style="left:-5px;top: 35px">太原</strong>
+
+                    <div class="li_hov" style="display: none;">
+                        <a href="javascript:;" target="_blank">
+                            <img src="images/ty.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:140px; bottom:136px;" class=""><span class="light">&nbsp;</span> <strong
+                        style="left:34px;top: 8px">厦门</strong>
+
+                    <div class="li_hov" style="display: none;">
+                        <a href="javascript:;" target="_blank">
+                            <img src="images/xm.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--底部部分-->
+<div class="footer">
+    <div class="foot_ch about">
+        <div class="div_list">
+            <h3>关于黑马</h3>
+            <ul>
+                <li><a href="/about/about.html" target="_blank" class="a_gd">黑马概况</a></li>
+                <li><a href="/about/develop.html" target="_blank" class="a_gd">发展历程</a></li>
+                <li><a href="/special/hmschool/index.shtml" target="_blank" class="a_gd">联系我们</a></li>
+            </ul>
+        </div>
+        <div class="div_list">
+            <h3>学习资源</h3>
+            <ul>
+                <li><a href="http://yun.itheima.com/Course" target="_blank" class="a_gd">免费视频下载</a></li>
+                <li><a href="http://yun.itheima.com/Open" target="_blank" class="a_gd">免费公开课</a></li>
+                <li><a href="http://yun.itheima.com/Map" target="_blank" class="a_gd">学习路线图</a></li>
+            </ul>
+        </div>
+        <div class="div_list">
+            <h3>如何报名</h3>
+            <ul>
+                <li><a href="/flow/flow.html" target="_blank" class="a_gd">报名流程</a></li>
+                <li><a href="/flow/flowbasic.html" target="_blank" class="a_gd">报名须知</a></li>
+                <li><a href="/flow/flowhj.html" target="_blank" class="a_gd">住宿环境</a></li>
+            </ul>
+        </div>
+        <div class="div_list div_ewm">
+            <div class="ewmbox">
+                <a href="javascript:;" target="_blank"><span class="iconbox"><i class='iconfont'>&#xe62e;</i></span>
+                    <span class="icon_tt">QQ空间</span></a>
+
+                <div class="ewm">
+                    <img src="images/qq.jpg">
+
+                    <p><span>扫描二维码</span><br>关注黑马程序员QQ空间账号</p>
+                </div>
+            </div>
+            <div class="ewmbox">
+                <span class="iconbox iconbox2"><i class='iconfont'>&#xe7e5;</i></span>
+                <span class="icon_tt">微信公众号</span>
+
+                <div class="ewm">
+                    <img src="images/wx.jpg">
+
+                    <p><span>扫描二维码</span><br>关注黑马程序员微信公众账号</p>
+                </div>
+            </div>
+            <div class="ewmbox">
+                <a href="javascript:;" target="_blank"><span class="iconbox iconbox3"><i class='iconfont'>
+                    &#xe699;</i></span>
+                    <span class="icon_tt">新浪微博</span></a>
+
+                <div class="ewm">
+                    <img src="images/wb.jpg">
+
+                    <p><span>扫描二维码</span><br>关注黑马程序员新浪微博账号</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="foot_ch add">
+        <p>江苏传智播客教育科技有限公司 版权所有Copyright 1999-2018, CSDN.NET, All Rights Reserved <a href="" style="color:#188eee;">苏ICP备16007882</a>
+            <span id="cnzz_stat_icon_3144200"><a href="javascript:;" target="_blank" title="站长统计"><img border="0"
+                                                                                                       hspace="0"
+                                                                                                       vspace="0"
+                                                                                                       src="images/pic1.gif"></a></span>
+        </p>
+    </div>
+</div>
+<script>
+
+    $('.map>ul>li').mouseenter(function () {
+        $(this).find('.li_hov').css('display', 'block');
+    }).mouseleave(function () {
+        $(this).find('.li_hov').css('display', 'none');
+    });
+
+    $('.ewmbox').mouseenter(function () {
+        $(this).find('.ewm').css('display', 'block');
+        $(this).find('.iconbox').stop().animate({'backgroundColor': '#0a8bb8'}, 500)
+        $(this).find('.iconbox').css('cursor', 'pointer')
+    }).mouseleave(function () {
+        $(this).find('.ewm').css('display', 'none');
+        $(this).find('.iconbox').stop().animate({'backgroundColor': '#486687'}, 500)
+    });
+</script>
+
+</body>
+</html>

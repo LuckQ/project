@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>黑马Web前端</title>
+    <link rel="stylesheet" href="css/frontWebStart.css"/>
+    <link rel="stylesheet" href="css/frontWebMiddleTop.css"/>
+    <link rel="stylesheet" href="css/frontWebGass.css"/>
+    <link rel="stylesheet" href="css/frontWebInfo.css"/>
+    <link rel="stylesheet" href="css/frontWebFire.css"/>
+    <link rel="stylesheet" href="css/frontWebFight.css"/>
+    <link rel="stylesheet" href="css/frontWebCreate.css"/>
+    <link rel="stylesheet" href="css/frontWebVip.css"/>
+    <link rel="stylesheet" href="css/frontWebHmSchool.css"/>
+    <link rel="stylesheet" href="css/frontWebFooter.css"/>
+    <link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico">
+    <!--<link rel="stylesheet" type="text/css" href="icon/iconfont.css">-->
+    <script src='js/jquery-1.12.1.js'></script>
+    <script src='js/jquery.animate-colors.js'></script>
+    <script src='js/frontWeb.js'></script>
+    <style>
+        .jump {
+            width: 200px;
+            height: 400px;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 200px;
+            left: -180px;
+            z-index: 66666;
+        }
+
+        .jump ul {
+            position: relative;
+        }
+
+        .jump ul li {
+            height: 80px;
+            padding-left: 50px;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        .jump ul li a {
+            color: #fff;
+            font-size: 20px;
+            line-height: 80px;
+            font-weight: bolder;
+            z-index: 20;
+
+        }
+
+        .current_j {
+            background-color: rgba(193, 12, 8, 0.85);
+            width: 100%;
+            height: 80px;
+            position: absolute;
+            top: 0;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+
+<!--顶部导航栏-->
+<nav class="top_nav">
+    <div class="banxin">
+        <!--顶部logo-->
+        <a href="javascript:;" class='logo'>
+            <img src="images/logo.png" alt="" width='129px' height="35px"/>
+        </a>
+        <!--顶部右侧导航栏-->
+        <ul class='top_nav_ul'>
+            <li><a href='javascript:;'>首页</a></li>
+            <li><a href='javascript:;'>报名流程</a></li>
+            <li><a href='javascript:;'>免费资源</a></li>
+            <li><a href='javascript:;'>校区汇总</a></li>
+            <li><a href='javascript:;'>来校路线</a></li>
+            <li><a href='javascript:;'>黑马社区</a></li>
+        </ul>
+    </div>
+</nav>
+<!--顶部导航栏结束-->
+
+<div class="jump">
+    <div class="current_j"></div>
+
+    <ul>
+        <li><a href="shouye/index.html">首页</a></li>
+        <li><a href="ui-project/ui-index.html">UI设计</a></li>
+        <li><a href="#">Web前端</a></li>
+        <li><a href="Python/Python.html">Python</a></li>
+        <li><a href="PHP/PHP/web项目.html">PHP</a></li>
+
+    </ul>
+</div>
+<script>
+    var jump = document.getElementsByClassName('jump')[0];
+    var ul_j = jump.children[1];
+    var current_j = jump.children[0];
+    var liArr = ul_j.children;
+    var count = 0;
+
+    for (var i = 0; i < liArr.length; i++) {
+        liArr[i].index = i;
+        liArr[i].onmouseover = function () {
+            fn_j(current_j, 80 * this.index);
+        };
+
+    };
+
+    function fn_j(ele, position) {
+        clearInterval(ele.timer);
+        ele.timer = setInterval(function () {
+            var step = (position - ele.offsetTop) / 10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            ele.style.top = ele.offsetTop + step + 'px';
+            if (Math.abs(position - ele.offsetTop) <= Math.abs(step)) {
+                ele.style.top = position + 'px';
+                clearInterval(ele.timer)
+            }
+        }, 10)
+
+    };
+
+    $(function(){
+        $('.jump').mouseenter(function(){
+            $(this).stop().animate({'left':0},500);
+        }).mouseleave(function(){
+            $(this).stop().animate({'left':'-180px'});
+        })
+    });
+
+</script>
+<!--主体部分开头开始-->
+<div class="top_body" id='top_body'>
+
+    <div class='banxin top_body_start'>
+        <img src="images/DL1.png" alt="" class='stone stone1'/>
+        <img src="images/DL2.png" alt="" class='stone stone2'/>
+        <img src="images/DL3.png" alt="" class='stone stone3'/>
+        <img src="images/DL4.png" alt="" class='stone stone4'/>
+        <img src="images/DL5.png" alt="" class='stone stone5'/>
+        <img src="images/ban_bg.png" alt="" class='ban_bg' id='ban_bg'/>
+
+        <div class="con" id='con'>
+            <div class="move" id='move'>
+                <img src="images/hd1.png" alt="" class='hd1' id="hd1"/>
+                <img src="images/hd2.png" alt="" class='hd2' id="hd2"/>
+                <img src="images/hd_down.png" alt="" class='hd_down'/>
+
+                <div class="circle">
+                    <img src="images/web.png" alt=""/>
+                    <span class='WQ'>Web<br>前端</span>
+                </div>
+            </div>
+            <div class="catch">
+                <span class='qiangzuo'><a href="javascript:;" style='color: #E1FF00;'>立即抢座</a></span>
+
+                <div class='shu'></div>
+                <div class='heng'></div>
+            </div>
+        </div>
+        <!--鼠标移动时动画-->
+        <script>
+            var con = document.getElementById('top_body');
+            var move = document.getElementById('move')
+            con.onmousemove = function (e) {
+                e = e || event;
+                var mouseX = document.documentElement.scrollLeft + e.clientX
+                var mouseY = document.documentElement.scrollTop + e.clientY
+                move.style.top = -mouseY / con.offsetHeight * 40 + 'px';
+                move.style.left = -mouseX / con.offsetWidth * 40 + 'px';
+            }
+        </script>
+    </div>
+</div>
+<!--主体部分开头结束-->
+
+<!--校区班级模块开始-->
+<div class="SC_body">
+    <div class='SC banxin'>
+        <!--校区部分-->
+        <div class="school">
+            <p>
+                <span class="span1">—————&nbsp;</span>
+                开设校区
+                <span class="span2">&nbsp;—————</span>
+            </p>
+
+            <div class="place">
+                <a href="javascript:;" class="have now">北京</a>
+                <a href="javascript:;" class="have">深圳</a>
+                <a href="javascript:;" class="have">上海</a>
+                <a href="javascript:;" class="no" style='background: #D1D1D1; color: #000;'>哈尔滨</a>
+                <a href="javascript:;" class="no" style='background: #D1D1D1; color: #000;'>济南</a>
+                <a href="javascript:;" class="no" style='background: #D1D1D1; color: #000;'>重庆</a>
+                <a href="javascript:;" class="have">郑州</a>
+                <a href="javascript:;" class="have">武汉</a>
+                <a href="javascript:;" class="have">西安</a>
+                <a href="javascript:;" class="have">广州</a>
+                <a href="javascript:;" class="have">长沙</a>
+                <a href="javascript:;" class="no" style='background: #D1D1D1; color: #000;'>杭州</a>
+                <a href="javascript:;" class="have">南京</a>
+                <a href="javascript:;" class="no" style='background: #D1D1D1; color: #000;'>成都</a>
+                <a href="javascript:;" class="no" style='background: #D1D1D1; color: #000;'>石家庄</a>
+                <a href="javascript:;" class="no" style='background: #D1D1D1; color: #000;'>合肥</a>
+                <a href="javascript:;" class="no" style='background: #D1D1D1; color: #000;'>太原</a>
+                <a href="javascript:;" class="no" style='background: #D1D1D1; color: #000;'>厦门</a>
+            </div>
+        </div>
+
+        <!--课程部分-->
+        <div class="cursor">
+            <div class='BJKT1'>
+                <img src="images/beijingKT1.png" alt="" width="336px" height="200px" class='beijingKT1'/>
+                <ul>
+                    <li><img src="images/hot1.gif" alt=""/> <a href="javascript:;">已开班</a></li>
+                    <li><img src="images/hot1.gif" alt=""/> <a href="javascript:;">我要报名</a></li>
+                    <li><img src="images/hot1.gif" alt=""/> <a href="javascript:;">我要报名</a></li>
+                    <li><img src="images/hot1.gif" alt=""/> <a href="javascript:;">我要报名</a></li>
+                </ul>
+            </div>
+            <div class='BJKT2'>
+                <img src="images/beijingKT2.png" alt="" width="336px" height="200px" class='beijingKT2'/>
+                <ul>
+                    <li><img src="images/hot1.gif" alt=""/> <a href="javascript:;">已开班</a></li>
+                    <li><img src="images/hot1.gif" alt=""/> <a href="javascript:;">我要报名</a></li>
+                    <li><img src="images/hot1.gif" alt=""/> <a href="javascript:;">我要报名</a></li>
+                    <li><img src="images/hot1.gif" alt=""/> <a href="javascript:;">我要报名</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--校区班级模块结束-->
+
+<!--为什么这么多人选择前端开始-->
+<div class='WhyChose'>
+    <img src="images/ufo_big.jpg" class="ufo">
+    <img src="images/ufo_small.jpg" class="ufo2">
+
+    <div class="WhyText banxin">
+        <div class="hd">
+            <h2>为何那么多人选择前端？</h2>
+        </div>
+        <div class="why">
+            <ul class="whyul">
+                <li class='whyul_li1'>
+                    <div class="li1_box">
+                        <h3>我要就业</h3>
+
+                        <p>大学毕业<br>找不到好工作？</p>
+                    </div>
+                    <h3 class="b1">针对就业</h3>
+
+                    <p class="b2">学职业技能，从根本上解决毕业就等于失业的困顿</p>
+                </li>
+                <li class='whyul_li2'>
+                    <div class="li2_box">
+                        <h3>我要转行</h3>
+
+                        <p>现有岗位工资太低，<br>离家还远？</p>
+                    </div>
+                    <h3 class="b1">针对转行</h3>
+
+                    <p class="b2">实战老师带你上路，<br>轻松无误区，职业道路更宽广</p>
+                </li>
+                <li class='whyul_li3'>
+                    <div class="li3_box">
+                        <h3>我要加薪</h3>
+
+                        <p>干的比牛多，拿到的<br>却屈指可数？</p>
+                    </div>
+                    <h3 class="b1">针对加薪</h3>
+
+                    <p class="b2">学了它，用实力说话<br>加薪不再遥遥无期</p>
+                </li>
+                <li class='whyul_li4'>
+                    <div class="li4_box">
+                        <h3>我要提升</h3>
+
+                        <p>周围的朋友<br>都升值加薪了？</p>
+                    </div>
+                    <h3 class="b1">针对提升</h3>
+
+                    <p class="b2">更轻松更专业带你找到提升点<br>全面提升自我价值</p>
+                </li>
+            </ul>
+            <p class="p_txt">不要问我，为什么现在后台开发转前端、设计师转前端、策划、编辑转前端、运营、市场在转前端、跨行业的都在转前端。<br>如果现在你还在犹豫是否去学前端，你得问自己，真正想要的是什么样的工作，或者点击下方按钮。
+            </p>
+            <a href="Javascript:;" target="_blank" class="a_btn">咨询我适合学前端吗？</a>
+        </div>
+    </div>
+</div>
+<!--为什么这么多人选择前端结束-->
+
+<!--前端工程师估值部分开始-->
+<div class="GassValue_box">
+    <div class="GassValue banxin">
+        <div class="hd ">
+            <h2>前端工程师市场估值有多高？</h2>
+        </div>
+        <div class="tongji" id='tongji'>
+            <div class="tongji_top">
+                <div class="TJ_top_l">
+                    <div class="TJ_top_l_l">
+                        <img src="images/bingtu.png" alt="" width='87%' class='bingtu'/>
+                    </div>
+                    <div class="TJ_top_l_r">
+                        <ul class="ul_table">
+                            <li>
+                                <span>区间</span>
+                                <span class="jd"><b></b></span>
+                                <span>占比</span>
+                            </li>
+                            <li>
+                                <span>10K-15K</span>
+                                <span class="jd "><b style="width:75%; background: #C8D94A;"></b></span>
+                                <span>32.9%</span>
+                            </li>
+                            <li>
+                                <span>15K-20K</span>
+                                <span class="jd "><b style="width:34%; background: #80DF64;"></b></span>
+                                <span>23.2%</span>
+                            </li>
+                            <li>
+                                <span>20K-30K</span>
+                                <span class="jd "><b style="width:23%; background: #ED831B;"></b></span>
+                                <span>14.6%</span>
+                            </li>
+                            <li>
+                                <span>30K-50K</span>
+                                <span class="jd "><b style="width:7%; background: #64645B;"></b></span>
+                                <span>2.0%</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="TJ_top_r">
+                    <h2>
+                        <span class="span_money">￥</span>
+                        <span class="span_money">1</span>
+                        <span class="span_money">3</span>
+                        <span class="span_money">7</span>
+                        <span class="span_money">4</span>
+                        <span class="span_money">0</span>
+                    </h2>
+
+                    <h3 class="believe">近一年15442份样本/可信度：高</h3>
+
+                    <p>—— 你觉得该统计数据准确吗？ ——</p>
+                    <ul class="ul_table">
+                        <li>
+                            <span>（63%）</span>
+                            <span class="jd"><b style="width:98%; background: #ED561B;"></b></span>
+                            <span>偏低</span>
+                        </li>
+                        <li>
+                            <span>（21%）</span>
+                            <span class="jd "><b style="width:40%; background: #494949;"></b></span>
+                            <span>靠谱</span>
+                        </li>
+                        <li>
+                            <span>（15%）</span>
+                            <span class="jd "><b style="width:30%; background: #494949;"></b></span>
+                            <span>偏高</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tongji_bottom">
+                <div class="tongji_bottom_l">
+                    <div class="TJ_bottom_t">
+                        <span>按工作经验统计</span>
+                        <span class="span2">数据说明</span>
+                    </div>
+                    <img src="images/zhexian1.png" alt="" width="90%" class='zhexian1'/>
+                </div>
+                <div class="tongji_bottom_r">
+                    <div class="TJ_bottom_t">
+                        <span>历年工资变化趋势</span>
+                        <span class="span2">数据说明</span>
+                    </div>
+                    <img src="images/zhexian2.png" alt="" width="90%" class='zhexian1'/>
+                </div>
+                <p>*以上数据为北京前端工程师平均薪资，数据来源独立第三方，真实可靠。</p>
+            </div>
+            <p class="p_txt">你可能还不知道的是，这是一份可持续发展的工作，薪资水平会随着工作经验的累积而快速增长，尤其熬到工作4到5年后，<br>会有一个质一样的飞跃，早一步学习，早一点累积，多一点财富。
+            </p>
+            <a href="javascript:;" target="_blank" class="a_btn" style='background: #FFF45C;'>快人一步点我？</a>
+        </div>
+    </div>
+</div>
+<!--前端工程师估值部分结束-->
+
+<!--学员信息部分开始-->
+<div class='info'>
+    <div id="skin">
+        <img id="star1" class="pelm top" src="images/star1.png" style="right: 254.536px; top: 58.6935px;">
+        <img id="star2" class="pelm top" src="images/star2.png" style="right: 614.536px; top: 114.693px;">
+        <img id="star3" class="pelm" src="images/star3.png" style="right: 38.5359px; bottom: 85.3065px;">
+        <img id="star4" class="pelm left top" src="images/star4.png" style="left: 217.464px; top: -29.3065px;">
+        <img id="star5" class="pelm left" src="images/star5.png" style="left: 121.464px; bottom: 226.907px;">
+        <img id="planet" class="pelm left top" src="images/planet.png" style="left: -93.9038px; top: -164.06px;">
+        <img id="robot" class="pelm top" src="images/robot.png" style="right: 379.072px; top: -2.61307px;">
+        <img id="astronaut" class="pelm top" src="images/astronaut.png" style="right: 182.886px; top: -32.7357px;">
+        <img id="asteroid" class="pelm" src="images/asteroid.png" style="right: 67.8756px; bottom: 231.573px;">
+    </div>
+    <!--学员信息鼠标移动动画-->
+    <script>
+        var moveInfo = document.getElementById('skin')
+        document.onmousemove = function (e) {
+            e = e || event;
+            var mouseX = e.clientX
+            var mouseY = e.clientY
+            moveInfo.style.top = 90 - mouseY / moveInfo.offsetHeight * 150 + 'px';
+            moveInfo.style.left = 50 - mouseX / moveInfo.offsetWidth * 100 + 'px';
+        }
+    </script>
+    <div class="banxin infoBox">
+        <div class="info_txt">
+            <div class="hd">
+                <h2>他们比你就多了一步选择而已！</h2>
+            </div>
+        </div>
+        <div class="infoTable">
+            <div class="tb_in">
+                <div class="table_t">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td class="td1">姓名</td>
+                            <td class="td2">年龄</td>
+                            <td class="td3">学历</td>
+                            <td class="td5">入职公司</td>
+                            <td class="td6">薪资</td>
+                            <td class="td7">福利待遇</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="scrollDiv">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td class="td1">王同学</td>
+                            <td class="td2">26</td>
+                            <td class="td3">本科</td>
+                            <td class="td5">北京**信息技术有限公司</td>
+                            <td class="td6">12500</td>
+                            <td class="td7">五险一金</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">聂同学</td>
+                            <td class="td2">25</td>
+                            <td class="td3">本科</td>
+                            <td class="td5">北京*彦科技有限公司</td>
+                            <td class="td6">11000</td>
+                            <td class="td7">五险一金+13薪</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">刘同学</td>
+                            <td class="td2">24</td>
+                            <td class="td3">本科</td>
+                            <td class="td5">北京**家科技有限公司</td>
+                            <td class="td6">12000</td>
+                            <td class="td7">五险一金</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">姚同学</td>
+                            <td class="td2">28</td>
+                            <td class="td3">大专</td>
+                            <td class="td5">成都***疗北京分公司</td>
+                            <td class="td6">18000</td>
+                            <td class="td7">五险一金+14薪资</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">薛同学</td>
+                            <td class="td2">30</td>
+                            <td class="td3">大专</td>
+                            <td class="td5">北京***技股份有限公司</td>
+                            <td class="td6">12000</td>
+                            <td class="td7">五险一金</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">杜同学</td>
+                            <td class="td2">25</td>
+                            <td class="td3">本科</td>
+                            <td class="td5">北京***力信息技术有限公司</td>
+                            <td class="td6">12000</td>
+                            <td class="td7">五险一金</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">李同学</td>
+                            <td class="td2">24</td>
+                            <td class="td3">本科</td>
+                            <td class="td5">北京***辉技术有限公司</td>
+                            <td class="td6">12000</td>
+                            <td class="td7">六险一金</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">梅同学</td>
+                            <td class="td2">21</td>
+                            <td class="td3">大专</td>
+                            <td class="td5">北京**台科技股份有限公司</td>
+                            <td class="td6">15000</td>
+                            <td class="td7">五险一金</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">郑同学</td>
+                            <td class="td2">25</td>
+                            <td class="td3">本科</td>
+                            <td class="td5">北京***城科技公司</td>
+                            <td class="td6">12000</td>
+                            <td class="td7">六险一金+补助</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">牛同学</td>
+                            <td class="td2">24</td>
+                            <td class="td3">大专</td>
+                            <td class="td5">北京***联科技股份有限公司</td>
+                            <td class="td6">13000</td>
+                            <td class="td7">五险一金</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">邵同学</td>
+                            <td class="td2">22</td>
+                            <td class="td3">本科</td>
+                            <td class="td5">北京****金管理有限公司</td>
+                            <td class="td6">13000</td>
+                            <td class="td7">五险一金</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">刘同学</td>
+                            <td class="td2">21</td>
+                            <td class="td3">大专</td>
+                            <td class="td5">北京***科技发展有限公司</td>
+                            <td class="td6">9000</td>
+                            <td class="td7">五险一金+补助</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">李同学</td>
+                            <td class="td2">25</td>
+                            <td class="td3">本科</td>
+                            <td class="td5">北京***明科技有限公司</td>
+                            <td class="td6">10000</td>
+                            <td class="td7">五险一金</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">刘同学</td>
+                            <td class="td2">25</td>
+                            <td class="td3">本科</td>
+                            <td class="td5">北京***日信息科技有限公司</td>
+                            <td class="td6">15000</td>
+                            <td class="td7">五险一金+13薪资</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">白同学</td>
+                            <td class="td2">24</td>
+                            <td class="td3">大专</td>
+                            <td class="td5">北京***化传媒有限公司</td>
+                            <td class="td6">12000</td>
+                            <td class="td7">五险一金</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">张同学</td>
+                            <td class="td2">23</td>
+                            <td class="td3">本科</td>
+                            <td class="td5">北京***桐科技有限公司</td>
+                            <td class="td6">12500</td>
+                            <td class="td7">五险一金</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">任同学</td>
+                            <td class="td2">23</td>
+                            <td class="td3">本科</td>
+                            <td class="td5">北京***科技股份有限公司</td>
+                            <td class="td6">10000</td>
+                            <td class="td7">五险一金</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">李同学</td>
+                            <td class="td2">24</td>
+                            <td class="td3">本科</td>
+                            <td class="td5">上海***业信息科技有限公司</td>
+                            <td class="td6">11000</td>
+                            <td class="td7">五险一金</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">李同学</td>
+                            <td class="td2">24</td>
+                            <td class="td3">本科</td>
+                            <td class="td5">北京**网有限公司</td>
+                            <td class="td6">12000</td>
+                            <td class="td7">五险一金</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">巩同学</td>
+                            <td class="td2">27</td>
+                            <td class="td3">本科</td>
+                            <td class="td5">大连**软件有限公司</td>
+                            <td class="td6">10000</td>
+                            <td class="td7">五险一金</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">李同学</td>
+                            <td class="td2">22</td>
+                            <td class="td3">大专</td>
+                            <td class="td5">北京**迷科技有限公司</td>
+                            <td class="td6">16000</td>
+                            <td class="td7">五险一金</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">张同学</td>
+                            <td class="td2">22</td>
+                            <td class="td3">大专</td>
+                            <td class="td5">北京**公司</td>
+                            <td class="td6">12000</td>
+                            <td class="td7">五险一金</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">李同学</td>
+                            <td class="td2">29</td>
+                            <td class="td3">大专</td>
+                            <td class="td5">北京***融服务外包有限公司</td>
+                            <td class="td6">14000</td>
+                            <td class="td7">五险一金</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">马同学</td>
+                            <td class="td2">22</td>
+                            <td class="td3">大专</td>
+                            <td class="td5">江苏*****育科技有限公司</td>
+                            <td class="td6">12000</td>
+                            <td class="td7">六险一金+补助</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">宋同学</td>
+                            <td class="td2">22</td>
+                            <td class="td3">本科</td>
+                            <td class="td5">北京***育科技有限公司</td>
+                            <td class="td6">12000</td>
+                            <td class="td7">五险一金+13薪</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--学员信息自动滚动-->
+        <script>
+            var table = document.getElementById('scrollDiv');
+            var inf = document.getElementsByClassName('info')[0];
+            var tbody = table.getElementsByTagName('tbody')[0];
+            var tr = tbody.children;
+            var Theight = tr[0].offsetHeight;
+            var count = parseInt(table.offsetHeight / Theight);
+            inf.onmouseenter = function () {
+                clearInterval(this.timer);
+                this.timer = setInterval(function () {
+                    go(tbody, -tbody.offsetHeight + table.offsetHeight)
+
+                }, 50)
+            };
+            inf.onmouseleave = function () {
+                clearInterval(this.timer)
+            };
+            //table.onmouseenter = function () {
+            //    clearInterval(inf.timer)
+            //};
+            function go(ele, position) {
+                var step = position > ele.offsetTop ? 1 : -1;
+                if (Math.abs(position - ele.offsetTop) < Math.abs(step)) {
+                    ele.style.top = position + 'px'
+                } else {
+                    ele.style.top = ele.offsetTop + step + 'px';
+                }
+            }
+
+        </script>
+        <div class="abox">
+            <a href="javascript:;" target="_blank" class="a_btn a1" style='float: left;width: 300px;'>我要立刻报名</a>
+            <a href="javascript:;" target="_blank" class="a_btn a2" style='float: right;width: 300px;'>查看更多薪资</a>
+        </div>
+    </div>
+
+</div>
+<!--学员信息部分结束-->
+
+<!--它火因为它无处不在部分开始-->
+<div class="fire">
+    <div class="fire_in banxin">
+        <div class="hd">
+            <h2>它火，是因为它无所不在！</h2>
+        </div>
+        <div class="fire_box">
+            <div class="grid">
+                <div class="fire_list">
+                    <div class="div_1">
+                        <h3>从安卓到苹果</h3>
+
+                        <p>用它开发的手机应用可以完美在苹果手机和安卓手机上同时运行。</p>
+                        <img style="margin-top:130px;" src="images/box4_icon1.png">
+                    </div>
+                </div>
+                <div class="fire_list">
+                    <div class="div_1">
+                        <h3>从网页到APP</h3>
+
+                        <p>在微信的使用也很广泛，微信小程序火的一塌糊涂，还有活灵活现的3D动画，狂拽炫酷的网页特效粒子动画，都是它的杰作。</p>
+                        <img style="margin-top:10px;" src="images/box4_icon2.png">
+                    </div>
+                </div>
+                <div class="fire_list">
+                    <div class="div_1">
+                        <h3>从休闲到游戏</h3>
+
+                        <p>切水果、打飞机、围住神经猫、打坦克……当下各种火爆的游戏全都源自它。</p>
+                        <img style="margin-top:90px;" src="images/box4_icon3.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="hot">&lt; 它火，也因它无所不能，这就是前端，你还在犹豫？&gt;</p>
+        <a href="javascript:;" target="_blank" class="a_btn">我要立刻抢座</a>
+    </div>
+</div>
+<!--它火因为它无处不在部分结束-->
+
+<!--项目实战部分开始-->
+<div class="fight">
+    <div class="banxin fight_in">
+        <div class="hd">
+            <h2>实战项目接轨时下技术热点</h2>
+        </div>
+        <div class="fight_con">
+            <div class="top" id='t_title'>
+                <div class="top_main on">
+                    项目一&nbsp;&nbsp;阿里百秀
+                </div>
+                <div class="top_main">
+                    项目二&nbsp;&nbsp;品优购PC端
+                </div>
+                <div class="top_main">
+                    项目三&nbsp;&nbsp;品优购移动端
+                </div>
+                <div class="top_main last">
+                    项目四&nbsp;&nbsp;品优购后台管理
+                </div>
+            </div>
+            <div class="f_show_box">
+                <div class="show_b" id='show_b1' style='display:block'>
+                    <img src="images/box5_icon1.png" style='float: left;'>
+
+                    <div class="show_b_r">
+                        <h3>阿里百秀项目</h3>
+
+                        <div class="show_txt">
+                            <div class="show_txt_l">
+                                <div class="world" style="margin-bottom: 30px;">
+                                    <h4>项目介绍</h4>
+
+                                    <p>阿里百秀项目属于CMS(内容管理系统)，系统可以分享生活、科技、微信热门文章的自媒体。用户可以通过登录系统的后台发布文章，管理文章的分类等。</p>
+                                </div>
+                                <div class="world">
+                                    <h4>项目特色</h4>
+
+                                    <p>系统不仅可以方便对数据进行管理，还加上了一些人性化的界面设计，使用户对博客的操作更为的方便。</p>
+                                </div>
+                            </div>
+                            <div class="show_txt_r">
+                                <div class="world">
+                                    <h4>项目技术</h4>
+
+                                    <p style='width: 240px;'>PHP&nbsp;&nbsp;&nbsp;&nbsp;MySQL&nbsp;&nbsp;&nbsp;&nbsp;AJAX<br>文件上传模板引擎&nbsp;&nbsp;&nbsp;&nbsp;会话技术<br>模块化
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="slideBox" class="slideBox">
+                            <div class="bd">
+                                <div class="tempWrap" style="overflow:hidden; position:relative; width:962px">
+                                    <ul id='lunbo_ul'
+                                        style="width: 5772px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: -962px;">
+                                        <li style="float: left; width: 962px;">
+                                            <img src="images/box5_a1.jpg">
+                                        </li>
+                                        <li style="float: left; width: 962px;">
+                                            <img src="images/box5_a2.jpg">
+                                        </li>
+                                        <li style="float: left; width: 962px;">
+                                            <img src="images/box5_a3.jpg">
+                                        </li>
+                                        <li style="float: left; width: 962px;">
+                                            <img src="images/box5_a4.jpg">
+                                        </li>
+                                        <li class="clone" style="float: left; width: 962px;">
+                                            <img src="images/box5_a1.jpg">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a class="prev" id='prev' href="javascript:void(0)"></a>
+                            <a class="next" id='next' href="javascript:void(0)"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="show_b" id='show_b2' style='display: none;'>
+                    <img src="images/box5_icon2.png" style='float: left;'>
+
+                    <div class="show_b_r">
+                        <h3>品优购PC端项目</h3>
+
+                        <div class="show_txt">
+                            <div class="show_txt_l">
+                                <div class="world" style="margin-bottom: 80px;">
+                                    <h4>项目介绍</h4>
+
+                                    <p>
+                                        品优购电商平台属于B2C电商，类似于京东、天猫等。该项目属于整体电商项目，项目主要包含网站首页、商品详情信息展示、购物车功能、注册新用户并发送验证邮件、登录、会员中心、购物车结算和支付、会员资料和收货地址维护、我的订单展示等。</p>
+                                </div>
+                                <div class="world">
+                                    <h4>项目特色</h4>
+
+                                    <p>品优购电商平台贯穿整个课程，每个阶段结束会完成该平台的特定部分，最后组成一个完整的电商平台项目。</p>
+                                </div>
+                            </div>
+                            <div class="show_txt_r">
+                                <div class="world">
+                                    <h4>项目技术</h4>
+
+                                    <p style='width:240px'>MVC&nbsp;&nbsp;&nbsp;&nbsp;Express&nbsp;&nbsp;&nbsp;&nbsp;Sequelize&nbsp;&nbsp;&nbsp;&nbsp;
+                                        Handlebars&nbsp;&nbsp;&nbsp;&nbsp;jQuery&nbsp;&nbsp;&nbsp;&nbsp;jQuery插件</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="slideBox2" class="slideBox">
+                            <div class="bd">
+                                <div class="tempWrap" style="overflow:hidden; position:relative; width:962px">
+                                    <ul id='lunbo_ul2'
+                                        style="width: 5772px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: -962px;">
+                                        <li style="float: left; width: 962px;">
+                                            <img src="images/box5_b1.jpg">
+                                        </li>
+                                        <li style="float: left; width: 962px;">
+                                            <img src="images/box5_b2.jpg">
+                                        </li>
+                                        <li style="float: left; width: 962px;">
+                                            <img src="images/box5_b3.jpg">
+                                        </li>
+                                        <li style="float: left; width: 962px;">
+                                            <img src="images/box5_b4.jpg">
+                                        </li>
+                                        <li class="clone" style="float: left; width: 962px;">
+                                            <img src="images/box5_b1.jpg">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a class="prev" id='prev2' href="javascript:void(0)"></a>
+                            <a class="next" id='next2' href="javascript:void(0)"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="show_b" id='show_b3' style='display: none;'>
+                    <img src="images/box5_icon3.png" style='float: left;'>
+
+                    <div class="show_b_r">
+                        <h3>品优购移动端项目</h3>
+
+                        <div class="show_txt">
+                            <div class="show_txt_l">
+                                <div class="world" style="margin-bottom: 80px;">
+                                    <h4>项目介绍</h4>
+
+                                    <p>项目属于整体电商项目的移动端实现，项目主要包含主页展示，商品分类展示，商品列表&amp;商品详情展示，购物车，用户中心，用户注册&amp;登录，订单展示等功能组成。是整个电商项目的一部分。</p>
+                                </div>
+                                <div class="world">
+                                    <h4>项目特色</h4>
+
+                                    <p>完全前后端分离，采用静态模版技术实现页面组织结构，组件化页面控件实现高复用性，采用运行时模版引擎进行页面渲染，使用gulp统一代码打包整合。</p>
+                                </div>
+                            </div>
+                            <div class="show_txt_r">
+                                <div class="world">
+                                    <h4>项目技术</h4>
+
+                                    <p style='width:240px'>以 node.js + gulp 作为项目构建核心<br>集成第三方UI框架 MUI<br>静态模版引擎
+                                        handlerbars<br> 动态模版引擎 artTemplate<br>利用 axios 进行统一网络请求处理<br>使用 javawebtoken 技术
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="slideBox3" class="slideBox">
+                            <div class="bd">
+                                <div class="tempWrap" style="overflow:hidden; position:relative; width:962px">
+                                    <ul id='lunbo_ul3'
+                                        style="width: 5772px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: -962px;">
+                                        <li style="float: left; width: 962px;">
+                                            <img src="images/box5_c1.jpg">
+                                        </li>
+                                        <li style="float: left; width: 962px;">
+                                            <img src="images/box5_c2.jpg">
+                                        </li>
+                                        <li style="float: left; width: 962px;">
+                                            <img src="images/box5_c1.jpg">
+                                        </li>
+                                        <li style="float: left; width: 962px;">
+                                            <img src="images/box5_c3.jpg">
+                                        </li>
+                                        <li class="clone" style="float: left; width: 962px;">
+                                            <img src="images/box5_c1.jpg">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a class="prev" id='prev3' href="javascript:void(0)"></a>
+                            <a class="next" id='next3' href="javascript:void(0)"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="show_b" id='show_b4' style='display: none;'>
+                    <img src="images/box5_icon4.png" style='float: left;'>
+
+                    <div class="show_b_r">
+                        <h3>品优购后台管理项目</h3>
+
+                        <div class="show_txt">
+                            <div class="show_txt_l">
+                                <div class="world" style="margin-bottom: 30px;">
+                                    <h4>项目介绍</h4>
+
+                                    <p>项目属于整体电商项目的后台管理系统，项目主要包含登录退出、用户和权限管理、上皮管理、订单管理、订单跟踪、数据报表模块。是整个电商项目的一部分。</p>
+                                </div>
+                                <div class="world">
+                                    <h4>项目特色</h4>
+
+                                    <p>项目整体技术选型和开发模式贴合主流技术方案，开发流程贴合实际的工作模式，包括项目开发、优化、打包，部署上线完整流程。</p>
+                                </div>
+                            </div>
+                            <div class="show_txt_r">
+                                <div class="world">
+                                    <h4>项目技术</h4>
+
+                                    <p style='width:240px'>完全采用前后端分离<br>lodash<br>echarts<br>百度地图api<br>物流接口<br>Vue技术栈(Vue2、Vue-router、<br>webpack、axios、Element-UI2)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="slideBox4" class="slideBox">
+                            <div class="bd">
+                                <div class="tempWrap" style="overflow:hidden; position:relative; width:962px">
+                                    <ul id='lunbo_ul4'
+                                        style="width: 5772px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: -962px;">
+                                        <li style="float: left; width: 962px;">
+                                            <img src="images/box5_c1.jpg">
+                                        </li>
+                                        <li style="float: left; width: 962px;">
+                                            <img src="images/box5_c2.jpg">
+                                        </li>
+                                        <li style="float: left; width: 962px;">
+                                            <img src="images/box5_c1.jpg">
+                                        </li>
+                                        <li style="float: left; width: 962px;">
+                                            <img src="images/box5_c3.jpg">
+                                        </li>
+                                        <li class="clone" style="float: left; width: 962px;">
+                                            <img src="images/box5_c1.jpg">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a class="prev" id='prev4' href="javascript:void(0)"></a>
+                            <a class="next" id='next4' href="javascript:void(0)"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--轮播图-->
+            <script src='js/lunbo.js'></script>
+        </div>
+        <p class="p_txt">学到就是赚到，多一个项目，多一种思维模式，多一点本领，多一点资本。<br>可怕的不是笨，也不是没有机会，而是机会就在眼前，你还是退缩错失了。十五年前做阿里巴巴的人基本都赚翻了，<br>十年前错过淘宝的人后悔不已，现在的你还可以选择。
+        </p>
+        <a href="http://d.itcast.cn/a" target="_blank" class="a_btn ">我要立刻抢座</a>
+    </div>
+</div>
+<!--项目实战部分结束-->
+
+<!--打造精品课程部分开始-->
+<div class="create_cursor">
+    <div class="banxin create_in">
+        <div class="hd">
+            <h2>专为你打造精品课程服务！</h2>
+        </div>
+        <div class="create_box">
+            <div class="c_box_inner">
+                <ul>
+                    <li class="li_11 cur">
+                        <img src="images/list1.png" class="tab_img">
+                    </li>
+                    <li class="">
+                        <img src="images/list2.png" class="tab_img">
+                    </li>
+                    <li class="">
+                        <img src="images/list3.png" class="tab_img">
+                    </li>
+                    <li class="li_22" style="width: 260px">
+                        <img src="images/list4.png" class="tab_img">
+                    </li>
+                    <li class="li_22">
+                        <img src="images/list5.png" class="tab_img">
+                    </li>
+                    <li class="li_22">
+                        <img src="images/list6.png" class="tab_img">
+                    </li>
+                    <li class="li_last">
+                        <img src="images/list7.png" class="tab_img">
+                    </li>
+                </ul>
+            </div>
+            <div class="imgbox">
+                <div class="cur" style="display: none;">
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>京东商城</li>
+                        <li>切图项目</li>
+                    </ul>
+                </div>
+                <div style="display: none; overflow: hidden; height: 122px; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
+                    <ul>
+                        <li>JavaScript基础</li>
+                        <li>Web API</li>
+                        <li>jQuery</li>
+                        <li>JavaScript进阶</li>
+                        <li>jQuery封装&amp;插件</li>
+                        <li>团队项目</li>
+                    </ul>
+                </div>
+                <div style="display: none; overflow: hidden; height: 122px; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
+                    <ul>
+                        <li>PHP后台开发</li>
+                        <li>Ajax</li>
+                        <li>团队项目</li>
+                        <li>阿里百秀项目（包括模块化）</li>
+                    </ul>
+                </div>
+                <div style="overflow: hidden; display: none; height: 121.527px; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
+                    <ul>
+                        <li>H5C3</li>
+                        <li>移动Web</li>
+                        <li>品优购移动端项目</li>
+                        <li>微信小程序实战开发</li>
+                        <li>微信公众号开发（页面）</li>
+                    </ul>
+                </div>
+                <div style="overflow: hidden; display: none; height: 182px; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
+                    <ul>
+                        <li>JavaScript高级</li>
+                        <li>NodeJS开发（品优购项目PC端前台）</li>
+                        <li>Vue开发基础</li>
+                        <li>Vue项目（品优购项目后台）</li>
+                    </ul>
+                </div>
+                <div style="display: none;">
+                    <ul>
+                        <li>React实战项目</li>
+                    </ul>
+                </div>
+                <div style="display: block;">
+                    <ul>
+                        <li>Canvas</li>
+                        <li>框架封装</li>
+                        <li>博学谷项目</li>
+                        <li>Angular5</li>
+                        <li>ReactNative Websocket</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="world">
+                <p class="p_txt">可能上面的课程你看的不是很清楚，也不知道是不是刚需，你可以选择查看课程大纲，或者回头再看一看有没有你耳熟能详的词，<br>课程整体由浅入深带你精通前端，毕竟学到的，就都是你的。非常简单的道理，确定了，可以尽快抢座，<br>快人一步就能多一份机会，成功的人都是看到机会果断下手的人。
+                </p>
+            </div>
+        </div>
+        <div class="abox">
+            <a href="http://d.itcast.cn/a" target="_blank" class="a_btn a1" style='float:left;'>我要立刻抢座</a>
+            <a href="javascript:;" class="a_btn a2 a_kc" style='float:right;'>了解详细课程大纲</a>
+        </div>
+    </div>
+</div>
+<!--打造精品课程部分结束-->
+
+<!--VIP课程教学部分开始-->
+<div class="vip">
+    <div class="vip_in banxin">
+        <div class="hd ">
+            <h2>VIP辅导教学体系，让你学习更轻松！</h2>
+        </div>
+        <div class="vip_ul">
+            <ul>
+                <li><p>前端<br>开班手册</p></li>
+                <li><p>助教<br>课程体系</p></li>
+                <li><p>正能量<br>学习氛围</p></li>
+                <li><p>阶段考试<br>末位跟踪表</p></li>
+                <li><p>辅导<br>工作记录</p></li>
+                <li><p>组长<br>跟踪表</p></li>
+            </ul>
+            <ul>
+                <li><p>校区课表<br>科学合理</p></li>
+                <li><p>前端课堂<br>所需软件</p></li>
+                <li><p>学习<br>督促体系</p></li>
+                <li><p class='p2'>面试题</p></li>
+                <li><p>核心<br>知识点笔记</p></li>
+                <li><p>讲师<br>知识点专题</p></li>
+            </ul>
+        </div>
+        <p class="p1">全方位的辅助教学体系和辅导规范，更加合理利用自习时间，用心帮助学员打造好基础，<br>
+            让学员轻松进步，学习更加高效。</p>
+        <a href="javascript:;" target="_blank" class="a_btn ">了解更多</a>
+
+    </div>
+</div>
+<!--VIP课程教学部分结束-->
+
+<!--报名部分开始-->
+<div class="baoming">
+    <h2>每期开班座位有限,预报名可优先享有占座特权哦！</h2>
+
+    <div class="W_form">
+        <form id="addform" method="post">
+            <div class="left">
+                <ul>
+                    <li>
+                        <span class="l_text"><s
+                                style="color:#e00000; font-size:15px; text-decoration:none; line-height:40px; padding-right:5px;">*</s>真实姓名</span>
+                        <input type="text" placeholder="我们期待更了解您" name="name" id="realname">
+                    </li>
+                    <li>
+                        <span class="l_text"><s
+                                style="color:#e00000; font-size:15px; text-decoration:none; line-height:40px; padding-right:5px;">*</s>联系手机</span>
+                        <input type="text" placeholder="我们和您一样讨厌骚扰电话" name="tel" id="phone">
+                    </li>
+                    <li>
+                        <span class="l_text"><s
+                                style="color:#e00000; font-size:15px; text-decoration:none; padding-right:5px;">*</s>上课地址</span>
+                        <select name="aid" id="address" style="width:212px; height:36px; display:block;">
+                            <option value="">请选择上课地址</option>
+                            <option value="3">北京校区</option>
+                            <option value="4">广州校区</option>
+                            <option value="5">上海校区</option>
+                            <option value="7">西安校区</option>
+                            <option value="14">郑州校区</option>
+                            <option value="15">武汉校区</option>
+                            <option value="16">长沙校区</option>
+                            <option value="19">深圳校区</option>
+                            <option value="21">南京校区</option>
+                        </select>
+                    </li>
+                    <li>
+                        <span class="l_text"><s
+                                style="color:#e00000; font-size:15px; text-decoration:none; line-height:40px; padding-right:11px;">*</s>QQ号码</span>
+                        <input type="text" placeholder="我们将尽快与您联系" name="qq" id="qq">
+                        <input type="hidden" name="cid" value="22">
+                        <input type="hidden" name="come" value="前端与移动开发专题">
+                        <input type="hidden" name="url" value="" id="u">
+                    </li>
+                </ul>
+                <br>
+            </div>
+            <div class="right">
+                <input type="button" value="现在预报名" onclick="check()">
+
+                <p>温馨提示：请保持手机畅通，咨询老师将为您提供专属的一对一报名服务。</p>
+            </div>
+        </form>
+    </div>
+</div>
+<!--报名部分结束-->
+
+<!--黑马校区部分开始-->
+<div class="hm_school">
+    <div class="h_s_in banxin">
+        <h2 class="sch_hd">不一样的城市<br><strong>一样的<b>黑马程序员</b></strong></h2>
+
+        <div class="t_content">
+            <div class="t_c_bg"></div>
+            <div class="txt_con">
+                <div>
+                    <h3>家门口的 <img src="images/hm_sh.png"></h3>
+                    学习择业更方便
+                </div>
+                <p class="pbg">相同的课程大纲</p>
+
+                <p>黑马每年都会进行课程的升级和更新，一旦更新，全国所有校区课程将统一使用最新教学大纲。</p>
+
+                <p class="pbg">相同的教学管理</p>
+
+                <p>黑马只有直营，不搞加盟！总部直接派讲师到分校区授课，采用相同的培训模式和课程。</p>
+
+                <p class="pbg">相同的师资力量</p>
+
+                <p>分校区的师资在同一套教师培训体系下完成培训，保障师资质量。</p>
+
+                <p class="pbg">相同的就业服务</p>
+
+                <p>一地学习，全国就业！ 毕业学员将由总部组织到北上广就业，确保高薪就业。</p>
+            </div>
+        </div>
+        <div class="map">
+            <ul>
+                <li class="cur" style="right:208px; top:240px;"><span class="light">&nbsp;</span> <strong>北京</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/bj.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:90px; top:107px;"><span class="light">&nbsp;</span> <strong>哈尔滨</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/hrb.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:187px; top:330px;"><span class="light">&nbsp;</span> <strong>济南</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/jn.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:90px; bottom:265px;"><span class="light">&nbsp;</span> <strong>上海</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/sh.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:128px; bottom:242px;"><span class="light">&nbsp;</span> <strong
+                        style="top:15px;">杭州</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/hz.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:145px; top:397px;"><span class="light">&nbsp;</span> <strong
+                        style="top:-10px; right:-58px;">南京</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/nj.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:190px; bottom:92px;"><span class="light">&nbsp;</span> <strong>深圳</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/sz.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:247px; top:393px;"><span class="light">&nbsp;</span> <strong>郑州</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/zz.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:254px; bottom:237px;"><span class="light">&nbsp;</span> <strong>武汉</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/wh.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:252px; bottom:194px;"><span class="light">&nbsp;</span> <strong>长沙</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/cs.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:224px; bottom:109px;"><span class="light">&nbsp;</span> <strong
+                        style="left:-35px;">广州</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/gz.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:329px; bottom:235px;"><span class="light">&nbsp;</span> <strong
+                        style="left:-35px;">重庆</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/cq.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:325px; bottom:301px;"><span class="light">&nbsp;</span> <strong
+                        style="left:-35px;">西安</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/xa.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:420px; bottom:213px;"><span class="light">&nbsp;</span> <strong
+                        style="left:-35px;">成都</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/cd.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:223px; top:295px;" class=""><span class="light">&nbsp;</span> <strong
+                        style="left:30px;">石家庄</strong>
+
+                    <div class="li_hov" style="display: none;">
+                        <a href="javascript:;" target="_blank"><img src="images/sjz.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:170px; top:420px;"><span class="light">&nbsp;</span> <strong
+                        style="left:-49px;">合肥</strong>
+
+                    <div class="li_hov"><a href="javascript:;" target="_blank"><img src="images/hefei.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:265px; top:300px;" class=""><span class="light">&nbsp;</span> <strong
+                        style="left:-5px;top: 35px">太原</strong>
+
+                    <div class="li_hov" style="display: none;">
+                        <a href="javascript:;" target="_blank">
+                            <img src="images/ty.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+                <li style="right:140px; bottom:136px;" class=""><span class="light">&nbsp;</span> <strong
+                        style="left:34px;top: 8px">厦门</strong>
+
+                    <div class="li_hov" style="display: none;">
+                        <a href="javascript:;" target="_blank">
+                            <img src="images/xm.jpg"></a>
+
+                        <p class="arrow"></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--黑马校区部分结束-->
+
+<!--结尾部分开始-->
+<div class="footer">
+    <div class="foot_ch about">
+        <div class="div_list">
+            <h3>关于黑马</h3>
+            <ul>
+                <li><a href="/about/about.html" target="_blank" class="a_gd">黑马概况</a></li>
+                <li><a href="/about/develop.html" target="_blank" class="a_gd">发展历程</a></li>
+                <li><a href="/special/hmschool/index.shtml" target="_blank" class="a_gd">联系我们</a></li>
+            </ul>
+        </div>
+        <div class="div_list">
+            <h3>学习资源</h3>
+            <ul>
+                <li><a href="http://yun.itheima.com/Course" target="_blank" class="a_gd">免费视频下载</a></li>
+                <li><a href="http://yun.itheima.com/Open" target="_blank" class="a_gd">免费公开课</a></li>
+                <li><a href="http://yun.itheima.com/Map" target="_blank" class="a_gd">学习路线图</a></li>
+            </ul>
+        </div>
+        <div class="div_list">
+            <h3>如何报名</h3>
+            <ul>
+                <li><a href="/flow/flow.html" target="_blank" class="a_gd">报名流程</a></li>
+                <li><a href="/flow/flowbasic.html" target="_blank" class="a_gd">报名须知</a></li>
+                <li><a href="/flow/flowhj.html" target="_blank" class="a_gd">住宿环境</a></li>
+            </ul>
+        </div>
+        <div class="div_list div_ewm">
+            <div class="ewmbox">
+                <a href="javascript:;" target="_blank"><span class="iconbox"><i class='iconfont'>&#xe62e;</i></span>
+                    <span class="icon_tt">QQ空间</span></a>
+
+                <div class="ewm">
+                    <img src="images/qq.jpg">
+
+                    <p><span>扫描二维码</span><br>关注黑马程序员QQ空间账号</p>
+                </div>
+            </div>
+            <div class="ewmbox">
+                <span class="iconbox iconbox2"><i class='iconfont'>&#xe7e5;</i></span>
+                <span class="icon_tt">微信公众号</span>
+
+                <div class="ewm">
+                    <img src="images/wx.jpg">
+
+                    <p><span>扫描二维码</span><br>关注黑马程序员微信公众账号</p>
+                </div>
+            </div>
+            <div class="ewmbox">
+                <a href="javascript:;" target="_blank"><span class="iconbox iconbox3"><i class='iconfont'>
+                    &#xe699;</i></span>
+                    <span class="icon_tt">新浪微博</span></a>
+
+                <div class="ewm">
+                    <img src="images/wb.jpg">
+
+                    <p><span>扫描二维码</span><br>关注黑马程序员新浪微博账号</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="foot_ch add">
+        <p>江苏传智播客教育科技有限公司 版权所有Copyright 1999-2018, CSDN.NET, All Rights Reserved <a href="" style="color:#188eee;">苏ICP备16007882</a>
+            <span id="cnzz_stat_icon_3144200"><a href="javascript:;" target="_blank" title="站长统计"><img border="0"
+                                                                                                       hspace="0"
+                                                                                                       vspace="0"
+                                                                                                       src="images/pic1.gif"></a></span>
+        </p>
+    </div>
+</div>
+</body>
+</html>

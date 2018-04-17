@@ -1,0 +1,127 @@
+@font-face {
+    font-family: 'iconfont';
+    src: url('../icon/iconfont.eot');
+    src: url('../icon/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../icon/iconfont.woff') format('woff'),
+    url('../icon/iconfont.ttf') format('truetype'),
+    url('../icon/iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.footer {
+    height: 238px;
+    width: 100%;
+    background: #2C3E50;
+    color: #e7e7e7;
+}
+
+.footer .foot_ch {
+    padding: 30px 0 15px;
+    border-top: 1px solid #8b8c8d;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.footer .about .div_list {
+    float: left;
+    margin-right: 50px;
+}
+
+.footer .foot_ch h3 {
+    padding-bottom: 15px;
+    font-size: 16px;
+    color: #e7e7e7;
+}
+
+.footer .about .div_list ul {
+    border-right: 1px solid #777777;
+    padding-right: 72px;
+}
+
+.footer .about .div_list li {
+    margin-bottom: 10px;
+}
+
+.footer .about .div_list li a {
+    color: #e7e7e7;
+}
+
+.footer .about .div_ewm {
+    float: right;
+    margin-right: 130px;
+}
+
+.footer .about .ewmbox {
+    float: left;
+    text-align: center;
+    margin-right: 50px;
+    position: relative;
+    padding-top: 20px;
+}
+
+.footer .about .ewmbox .ewm {
+    background: #486687;
+    width: 160px;
+    padding: 15px 10px;
+    position: absolute;
+    left: 50%;
+    margin-left: -90px;
+    top: -155px;
+    z-index: 2;
+    display: none;
+    z-index: 999;
+}
+
+.footer .about .ewmbox .ewm p {
+    font-size: 12px;
+    color: #fff;
+}
+
+.footer .about .ewmbox .ewm p span {
+    font-size: 14px;
+}
+
+.footer .add {
+    padding: 15px 0 30px;
+    width: 100%;
+    background: #1A2634;
+    border-top: none;
+    overflow: hidden;
+}
+
+.footer .add p {
+    font-size: 12px;
+    line-height: 24px;
+    color: #4f6379;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.footer .about .ewmbox .iconbox {
+    display: block;
+    margin: 0 auto;
+    width: 76px;
+    height: 76px;
+    background: #486687;
+    border-radius: 10px;
+}
+
+.footer .about .ewmbox .icon_tt {
+    line-height: 40px;
+    color: #e7e7e7;
+}
+
+.footer .about .ewmbox .iconfont {
+    font-size: 60px;
+    line-height: 70px;
+    color: #fff;
+}
+

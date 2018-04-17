@@ -1,0 +1,138 @@
+.info {
+    height: 1118px;
+    width: 100%;
+    background: url("../images/box3_bg.jpg");
+    overflow: hidden;
+    position: relative;
+}
+#skin {
+    width: 100%;
+    height: 1062px;
+    max-height: 1062px;
+    position: absolute;
+}
+.pelm {
+    position: absolute;
+}
+.infoBox {
+    height: 1047px;
+    position: relative;
+}
+.info_txt {
+    position: absolute;
+    left: 80px;
+    top: -100px;
+    opacity: 0;
+    display: inline-block;
+}
+.info_txt .hd {
+    display: inline-block;
+    background: url(../images/hd_bg.png) no-repeat left bottom;
+    padding-bottom: 38px;
+    padding-top: 60px;
+
+}
+.info_txt .hd h2 {
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 60px;
+    color: #fff;
+    display: inline-block;
+    padding: 0 100px;
+    border-bottom: 3px solid #fff;
+}
+.infoTable {
+    height: 693px;
+    background: #F8FFC5 url(../images/table_bg.jpg) no-repeat center bottom;
+    padding-bottom: 40px;
+    width: 1200px;
+    margin: 40px auto 10px;
+    position: absolute;
+    top: 600px;
+    box-sizing: border-box;
+    opacity: 0;
+}
+.tb_in {
+    width: 1090px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.table_t {
+    width: 1090px;
+    margin: 0 auto;
+    background: #EF4A36;
+    color: #fff;
+    border-bottom: 2px solid #222;
+}
+.table_t td {
+    height: 60px;
+    line-height: 60px;
+    font-size: 22px;
+    text-align: center;
+    color: #fff;
+}
+.table_t .td1 {
+    width: 120px;
+}
+.table_t .td2 {
+    width: 100px;
+}
+.table_t .td3 {
+    width: 110px;
+}
+.table_t .td5 {
+    width: 340px;
+}
+.table_t .td6 {
+    width: 120px;
+}
+.table_t .td7 {
+    width: 200px;
+}
+
+#scrollDiv {
+    height: 570px;
+    overflow: hidden;
+    margin: 0 auto;
+    cursor: pointer;
+    position: relative;
+}
+#scrollDiv tbody {
+    position: absolute;
+    top: 0;
+}
+
+#scrollDiv td {
+    height: 45px;
+    width: 990px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 18px;
+    color: #222;
+    border-bottom: 1px solid #222;
+}
+#scrollDiv  .td1 {
+    width: 120px;
+}
+#scrollDiv  .td2 {
+    width: 100px;
+}
+#scrollDiv  .td3 {
+    width: 110px;
+}
+#scrollDiv  .td5 {
+    width: 340px;
+}
+#scrollDiv  .td6 {
+    width: 120px;
+}
+#scrollDiv  .td7 {
+    width: 200px;
+}
+.abox {
+    width: 690px;
+    position: absolute;
+    bottom: 0px;
+    left: 256px;
+}

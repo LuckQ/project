@@ -1,0 +1,251 @@
+.GassValue_box {
+    height: 1253px;
+    width: 100%;
+    background-color: #112131;
+    overflow: hidden;
+}
+
+.GassValue {
+    height: 1172px;
+    position: relative;
+}
+
+.GassValue .hd {
+    background: url(../images/hd_bg.png) no-repeat left bottom;
+    padding-top: 70px;
+    /*width: 980px;*/
+    height: 141px;
+    display: inline-block;
+    position: absolute;
+    left: 120px;
+    top: -100px;
+    opacity: 0;
+}
+
+.GassValue .hd h2 {
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 60px;
+    color: #fff;
+    display: inline-block;
+    padding: 0 100px;
+    border-bottom: 3px solid #fff;
+}
+
+.GassValue .tongji {
+    height: 944px;
+    width: 1200px;
+    position: absolute;
+    bottom: -400px;
+    opacity: 1;
+}
+
+.tongji .tongji_top {
+    width: 1200px;
+    height: 360px;
+    padding: 40px 30px;
+    background: #FFF45C;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.tongji .TJ_top_l {
+    left: -200px;
+    width: 700px;
+    height: 280px;
+    overflow: hidden;
+    border-right: 3px solid #112131;
+    opacity: 0;
+    position: absolute;
+}
+
+.tongji .TJ_top_r {
+    float: right;
+    width: 398px;
+    opacity: 0;
+    height: 280px;
+    position: absolute;
+    right: -200px;
+}
+
+.TJ_top_l_l {
+    float: left;
+    width: 370px;
+    height: 300px;
+    position: relative;
+}
+
+.TJ_top_l_l .bingtu {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.TJ_top_l_r {
+    float: left;
+    width: 247px;
+    height: 300px;
+}
+
+.ul_table {
+    width: 247px;
+    height: 245px;
+}
+
+.ul_table li {
+    border-bottom: 1px solid #112131;
+    height: 48px;
+    line-height: 48px;
+}
+
+.ul_table li span {
+    float: left;
+    width: 80px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.ul_table .jd {
+    float: left;
+    width: 87px;
+    height: 20px;
+    position: relative;
+}
+
+.ul_table .jd b {
+    display: block;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 13px;
+    position: absolute;
+    opacity: 0;
+    left: -100px;
+}
+
+.TJ_top_r h2 {
+    font-size: 70px;
+    font-weight: bold;
+    padding-left: 42px;
+    height: 93px;
+}
+
+.TJ_top_r h2 span {
+    color: #ED561B;
+    float: left;
+    display: none;
+}
+
+.believe {
+    background: #ED561B;
+    font-size: 20px;
+    text-align: center;
+    line-height: 38px;
+    color: #FFF45C;
+    font-weight: bold;
+    height: 38px;
+}
+
+.TJ_top_r p {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.TJ_top_r .ul_table {
+    width: 350px;
+    margin: 10px auto 0;
+    height: 89px;
+}
+
+.TJ_top_r .ul_table li {
+    line-height: 30px;
+    border-bottom: none;
+    height: 30px;
+}
+
+.TJ_top_r .ul_table li .jd {
+    width: 190px;
+}
+
+.TJ_top_r .ul_table .jd b {
+    height: 15px;
+    margin-top: 6px;
+}
+
+.TJ_top_r .ul_table li span {
+    float: left;
+    width: 80px;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+.tongji .tongji_bottom {
+    width: 1200px;
+    height: 390px;
+    box-sizing: border-box;
+    padding: 10px 30px 60px;
+    background: #041527;
+    position: relative;
+}
+
+.tongji_bottom_l {
+    left: -100px;
+    width: 550px;
+    height: 300px;
+    overflow: hidden;
+    position: absolute;
+    opacity: 0;
+}
+
+.TJ_bottom_t {
+    overflow: hidden;
+    width: 495px;
+    margin: 0 auto;
+    position: relative;
+    top: 12px;
+}
+
+.TJ_bottom_t span {
+    float: left;
+    color: #fff;
+    font-size: 20px;
+}
+
+.TJ_bottom_t .span2 {
+    float: right;
+}
+
+.zhexian1 {
+    position: absolute;
+    left: 30px;
+    top: 60px;
+}
+
+.tongji .tongji_bottom_r {
+    right: -100px;
+    width: 550px;
+    height: 300px;
+    overflow: hidden;
+    position: absolute;
+    opacity: 0;
+}
+
+.tongji_bottom p {
+    font-size: 14px;
+    color: #FFF45C;
+    text-align: right;
+    clear: both;
+    position: absolute;
+    bottom: 40px;
+    right: 0;
+}
+
+.tongji .p_txt {
+    font-size: 18px;
+    line-height: 26px;
+    color: #fff;
+    margin-top: 40px;
+}

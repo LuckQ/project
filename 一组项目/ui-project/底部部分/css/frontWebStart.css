@@ -1,0 +1,300 @@
+@keyframes xuanzhuan{
+    from {
+
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+
+    }
+}
+
+@keyframes yunshi {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+
+    }
+    to {
+        opacity: 0.7;
+        transform: scale(4);
+
+    }
+}
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline-style: none;
+    list-style: none;
+    color: #000;
+}
+.banxin {
+    width: 1200px;
+    margin: 0 auto;
+}
+/*顶部导航栏开始*/
+.top_nav {
+    height: 56px;
+    width: 100%;
+    background-color: white;
+}
+.top_body {
+    height: 745px;
+    width: 100%;
+    background-color: #041527;
+}
+
+.top_nav .logo {
+    width: 207px;
+    height: 56px;
+    display: block;
+    float: left;
+}
+.top_nav .logo img {
+    margin-top: 10px;
+}
+.top_nav .banxin .top_nav_ul {
+    float: right;
+    margin-top: 15px;
+}
+.top_nav .top_nav_ul li {
+    float: left;
+    border-left: 1px solid black;
+    padding:0 5px;
+}
+.top_nav .top_nav_ul li:first-child {
+    border-left: none;
+}
+.top_nav .top_nav_ul li:hover {
+    border-bottom:1px solid black ;
+}
+/*顶部导航栏结束*/
+
+/*主体部分顶部开始*/
+.top_body {
+    overflow: hidden;
+}
+.top_body_start {
+    height: 736px;
+    position: relative;
+}
+.stone {
+    position: absolute;
+    top: 100px;
+    opacity: 0;
+}
+.stone1 {
+    left: 200px;
+    animation: yunshi 7s infinite linear;
+}
+.stone2 {
+    animation: yunshi 7s 5s infinite linear;
+    left: 200px;
+}
+.stone3 {
+    animation: yunshi 7s 10s infinite linear;
+    left: -100px;
+}
+.stone4 {
+    animation: yunshi 7s 15s infinite linear;
+    left: 100px;
+}
+.stone5 {
+    animation: yunshi 7s 20s infinite linear;
+}
+
+.top_body_start .ban_bg {
+    position: absolute;
+    top: 500px;
+    /*z-index: 1;*/
+    opacity: 0;
+}
+
+.top_body_start .con {
+    position: absolute;
+    top: 130px;
+    height: 530px;
+    width: 1200px;
+}
+.top_body_start .con .move {
+    height: 400px;
+    width: 1200px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.top_body_start .con .hd1 {
+    position: absolute;
+    right: 500px;
+    opacity: 0;
+    /*z-index: 2;*/
+}
+.top_body_start .con .hd2 {
+    position: absolute;
+    left: 700px;
+    top: 190px;
+    opacity: 0;
+    /*z-index: 2;*/
+}
+.con .move .hd_down {
+    position: absolute;
+    bottom: -30px;
+    left: 200px;
+}
+.circle {
+    position: absolute;
+    /*z-index: 3;*/
+    width: 214px;
+    height: 214px;
+    right: 50px;
+    top: -10px;
+    text-align: center;
+}
+.circle img{
+    animation: xuanzhuan 2s infinite linear;
+}
+
+.circle .WQ {
+    position: absolute;
+    left: 50%;
+    margin-left: -53px;
+    top: 55px;
+    line-height: 50px;
+    color: #041527;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.catch {
+    position: absolute;
+    left: 50%;
+    transform:translateX(-50%);
+    bottom :0px;
+    height: 80px;
+    width: 255px;
+    text-align: center;
+    overflow: hidden;
+    padding-top: 10px;
+}
+.catch .qiangzuo {
+    color: #E1FF00;
+    font-size: 40px;
+    border-bottom: 4px solid #E1FF00;
+    padding: 10px 40px;
+    position: relative;
+    z-index: 2;
+
+}
+
+.catch .shu {
+    position: absolute;
+    left: 50%;
+    transform:translateX(-50%);
+    border-right: 4px solid #E1FF00;
+    border-left: 4px solid #E1FF00;
+    width: 233px;
+    height: 72px;
+    bottom: -100px;
+}
+.catch .heng {
+    width: 240px;
+    height: 4px;
+    background-color: #E1FF00;
+    position: absolute;
+    right: -240px;
+    top: 5px;
+}
+/*主体开始部分结束*/
+
+
+/*校区课程部分开始*/
+.SC_body {
+    width: 100%;
+    background-color: #041527;
+    height: 284px;
+}
+.SC {
+    height: 284px;
+}
+
+.SC .school {
+    width: 286px;
+    float: left;
+    height: 213px;
+    margin: 35px 25px 35px 35px;
+    margin-left: 0;
+}
+.school p {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.school p span {
+    font-size: 14px;
+    line-height: 18px;
+    color: #D72502;
+    display: inline-block;
+}
+
+.school .place {
+    width: 320px;
+}
+.school .place a {
+    float: left;
+    width: 67px;
+    height: 23px;
+    line-height: 23px;
+    text-align: center;
+    background: #1E364E;
+    color: #fff;
+    margin: 0 5px 10px 0;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.cursor {
+    margin-top: 42px;
+    width: 850px;
+    float: left;
+    height: 200px;
+    position: relative;
+}
+
+.cursor .BJKT1 {
+    position: absolute;
+    left: 0;
+}
+.cursor ul {
+    width: 100px;
+}
+.cursor .BJKT1 ul {
+    position: absolute;
+    right: -100px;
+    bottom: -20px;
+}
+.cursor .BJKT1 li {
+    height: 34px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+.cursor .BJKT2 {
+    position: absolute;
+    right: 75px;
+}
+.cursor .BJKT2 ul {
+    position: absolute;
+    right: -94px;
+    bottom: -20px;
+}
+.cursor .BJKT2 li {
+    height: 34px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+.cursor ul li a {
+    color: red;
+    vertical-align: top;
+}

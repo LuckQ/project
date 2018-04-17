@@ -1,0 +1,549 @@
+/*顶部页面start*/
+
+@mainColor:#E01D09;
+@keyframes  fangda{
+  from {
+    transform: scale(1)
+  }
+  to {
+    transform: scale(1.1)
+  }
+}
+@keyframes  suoxiao{
+  from {
+    transform: scale(1.1)
+  }
+  to {
+    transform: scale(1)
+  }
+}
+
+@keyframes gaibian {
+  from {
+    top: 28px;
+  }
+  to {
+    top: 20px;
+  }
+}
+
+@keyframes gaibian1 {
+  from {
+    top: 20px;
+  }
+  to {
+    top: 28px;
+  }
+}
+.top {
+  height: 55px;
+  background-color: #d72502;
+  padding-top: 10px;
+  position: relative;
+  .top-inner {
+    .top-sp {
+      font: 700 24px '微软雅黑';
+      color: #fff;
+      margin-left: 135px;
+      letter-spacing: 2px;
+    }
+    .top-a {
+      display: inline-block;
+      width: 124px;
+      height: 30px;
+      border: 1px solid #fffc01;
+      color: #fffc01;
+      text-align: center;
+      line-height: 30px;
+      margin-left: 58px;
+      font-size: 16px;
+      border-radius: 3px;
+    }
+  }
+  .top-close {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url("../images/close.png") no-repeat;
+    position: absolute;
+    top: 18px;
+    right: 10px;
+  }
+}
+
+/*顶部页面end*/
+
+/*页面导航start*/
+.header {
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  //line-height: 60px;
+  h1 {
+    float: left;
+    margin-left: 118px;
+    margin-top: 10px;
+    a img {
+      width: 138px;
+    }
+  }
+  ul {
+    float: right;
+    li {
+      float: left;
+      width: 77px;
+      font: 14px '微软雅黑';
+      line-height: 60px;
+      text-align: center;
+      a {
+        padding: 0 10px;
+        border-right: 1px solid #e0e0e0;
+      }
+      a:hover {
+        color: #D72403;
+      }
+    }
+    .first {
+      width: 196px;
+      padding: 0 10px;
+      background-color: #b81d00;
+      color: #fff;
+      font-size: 18px;
+      margin-right: 35px;
+    }
+    .free {
+      width: 105px;
+    }
+  }
+}
+
+/*页面导航end*/
+
+/*页面主体start*/
+.section {
+  /*轮播图start*/
+  .banner {
+    position: relative;
+    //背景图
+    .banner-img {
+      width: 100%;
+      height: 538px;
+      overflow: hidden;
+      .banner_ul {
+        width: 100%;
+        position: absolute;
+        //第一张图片
+        .banner-bj {
+          width: 100%;
+          height: 538px;
+          background-image: url("../images/banner_01.jpg");
+          background-repeat: no-repeat;
+          background-position: center top;
+          position: absolute;
+          //background-size: 100% 100%;
+          //三个图标
+          .im1 {
+            position: absolute;
+            //left: 412px;
+            left: -100px;
+            bottom: 66px;
+            //transform: translateX(400px);
+            //transition: all 1s linear;
+          }
+          .im2 {
+            position: absolute;
+            left: 635px;
+            //bottom: 66px;
+            top: -100px;
+            //transform: translateX(400px);
+            //transition: all 1s linear;
+          }
+          .im3 {
+            position: absolute;
+            //left: 857px;
+            right: -100px;
+            bottom: 66px;
+            //transform: translateX(400px);
+            //transition: all 1s linear;
+          }
+        }
+        //第二张图片
+        .banner-bj2 {
+          width: 100%;
+          height: 538px;
+          background: url("../images/banner_02.jpg") no-repeat center top;
+          position: absolute;
+          left: 100%;
+        }
+        .banner_bj3 {
+          position:absolute;
+          left:200%;
+        }
+      }
+
+
+    }
+    //  小点
+    .circle {
+      position: absolute;
+      left: 50%;
+      margin-left: -28px;
+      bottom: 10px;
+      span {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        margin: 0 5px;
+        border: 1px solid #bbb;
+        cursor: pointer;
+      }
+      .active {
+        background-color: #fff;
+      }
+    }
+  }
+
+  /*开班时间start*/
+  .openTime {
+    margin-top: 54px;
+    .bx {
+      .openTime-im {
+        margin-bottom: 10px;
+      }
+      //height: 100%;
+      .openTime-im:hover {
+        img {
+          //transform: scale(1.1);
+          //transition: all 0.3s ease 0s;
+          //-webkit-transform: scale(1.1);
+          //-webkit-transition: all 0.3s ease 0s;
+          animation:fangda 0.5s ,suoxiao 0.5s 0.5s;
+
+        }
+      }
+
+      //各地开班
+      .kb-subject {
+        width: 100%;
+        height: 284px;
+        margin: 0 auto;
+        //左侧
+        .kb-city {
+          width: 286px;
+          height: 214px;
+          margin: 35px 25px 35px 0;
+          p {
+            font: 22px '微软雅黑';
+            margin-bottom: 20px;
+            text-align: center;
+            span {
+              font-size: 14px;
+              line-height: 18px;
+              display: inline-block;
+              color: #D72502;
+            }
+            .span1 {
+              margin-right: 15px;
+            }
+            .span2 {
+              margin-left: 15px;
+            }
+          }
+          .main-city {
+            width: 320px;
+            a {
+              display: inline-block;
+              width: 67px;
+              height: 23px;
+              //line-height: 25px;
+              text-align: center;
+              border-radius: 3px;
+              margin: 0 5px 10px 0;
+              font: 14px/23px "微软雅黑";
+            }
+            .have {
+              background-color: #1E364E;
+              color: #fff;
+            }
+            .no {
+              background-color: #d1d1d1;
+              color: #333;
+            }
+            .now {
+              background-color: #D72502;
+            }
+          }
+        }
+        //右侧
+        .kb-box {
+          width: 870px;
+          height: 188px;
+          margin-top: 30px;
+          //overflow: hidden;
+          position:relative;
+          .dis {
+            display: none;
+          }
+          .active {
+            display: block;
+          }
+          div {
+            width: 895px;
+            height: 188px;
+            overflow: hidden;
+            display: none;
+            position: absolute;
+            ul {
+              width: 1000px;
+              float: left;
+              li {
+                width: 415px;
+                float: left;
+                font: 15px "微软雅黑";
+                margin-right: 30px;
+                margin-bottom: 20px;
+                border-bottom: 1px solid #ccc;
+                span {
+                  margin-right: 7px;
+                  line-height: 31px;
+                }
+                .kb-sp1 {
+                  display: inline-block;
+                  width: 48px;
+                  height: 25px;
+                  color: #fff;
+                  background-color: @mainColor;
+                  font-size: 12px;
+                  text-align: center;
+                  line-height: 25px;
+                }
+                p {
+                  float: right;
+                  width: 91px;
+                  background: url("../images/hot1.gif") no-repeat 5px 4px;
+                  padding-left: 16px;
+                  line-height: 31px;
+                  text-align: center;
+                  a {
+                    color: #D72502;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /*全能设计师*/
+  .design {
+    margin-bottom: 22px;
+    .bx:hover {
+      img {
+        animation:fangda 0.5s ,suoxiao 0.5s 0.5s;
+      }
+    }
+  }
+
+  @keyframes big{
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(.3, .3, .3);
+      transform: scale3d(.3, .3, .3);
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  .design-pic {
+    width: 100%;
+    height: 404px;
+    background: url("../images/data.jpg") no-repeat center;
+
+  }
+
+  .ani{
+    animation: big;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+
+  /*详情介绍*/
+  .details {
+    width: 100%;
+    height: 1034px;
+    position: relative;
+    .first,.second,.third {
+      width: 100%;
+      height: 324px;
+      border-bottom: 1px solid #ccc;
+      .f-left {
+        position: relative;
+        width: 600px;
+        //height: 100%;
+        .del-im1 {
+          position: absolute;
+          top: 28px;
+          left: -400px;
+          animation:gaibian 0.5s ,gaibain1 0.5s;
+        }
+        .del-im2 {
+          position: absolute;
+          top: 28px;
+          right: -350px;
+          animation:gaibian 0.5s ,gaibain1 0.5s;
+        }
+        .del-im3 {
+          position: absolute;
+          top: 88px;
+          left: -400px;
+          animation:fangda 0.5s ,suoxiao 0.5s 0.5s;
+        }
+      }
+      .f-right {
+        width: 558px;
+        //height: 100%;
+        margin-left: 40px;
+        .f-right1 {
+          width: 21px;
+          height: 38px;
+          background-color: #37c39d;
+          margin-top: 58px;
+        }
+        .f-right2 {
+          width: 528px;
+          margin-left: 9px;
+          margin-top: 48px;
+          h3 {
+            font: bold 40px "微软雅黑";
+            color: #ff7e00;
+          }
+          .two {
+            color: #49b4ff;
+          }
+          .three {
+            color: #ff6565;
+          }
+          h4 {
+            font: 20px "微软雅黑";
+            color: #ff7e00;
+            margin-bottom: 28px;
+          }
+          p {
+            font: 14px "微软雅黑";
+            color: #333;
+            line-height: 25px;
+            span {
+              font-weight: 700;
+            }
+          }
+          a {
+            display: inline-block;
+            width: 153px;
+            height: 38px;
+            border: 1px solid #37c39d;
+            color: #37c39d;
+            text-align: center;
+            //line-height: 36px;
+            font: 16px/36px "微软雅黑";
+            margin-top: 14px;
+          }
+          a:hover {
+            background-color: #37c39d;
+            color: #fff;
+          }
+        }
+      }
+      .f-right-yd {
+        position: absolute;
+        top: 0;
+        right: -600px;
+      }
+      .f-right-yd2 {
+          position: absolute;
+          top: 320px;
+          left: -600px;
+        }
+      .f-right-yd3 {
+        position: absolute;
+        top: 650px;
+        right: -500px;
+      }
+    }
+    .third {
+      border-bottom: none;
+    }
+  }
+
+  /*课程介绍*/
+  .introduce {
+    width: 100%;
+    height: 615px;
+    background: url("../images/technology.jpg") no-repeat center;
+    .intr-left {
+      width: 55%;
+      height: 100%;
+      .left-con {
+        width: 702px;
+        height: 100%;
+        float: right;
+        position: relative;
+        left: -800px;
+        img {
+          position: absolute;
+          top: -48px;
+          left: 119px;
+        }
+        p {
+          color: #fff;
+          font: 24px "微软雅黑";
+          opacity: .5;
+          position: absolute;
+          bottom: 180px;
+          right: 60px;
+        }
+      }
+    }
+    .intr-right {
+      width: 45%;
+      height: 100%;
+      background-color: #722d95;
+      .right-con {
+        width: 498px;
+        height: 100%;
+        float: left;
+        position: relative;
+        right: -500px;
+        div {
+          width: 50%;
+          float: left;
+          text-align: center;
+          margin-top: 69px;
+          color: #fff;
+          p {
+            font: 16px "微软雅黑";
+            margin: 20px 0 2px 0;
+
+          }
+          span {
+            font: 12px "微软雅黑";
+            opacity: .5;
+            //margin-top: 2px;
+          }
+        }
+        .mar {
+          margin-top: 52px;
+        }
+        .hov:hover {
+          img{
+            animation:fangda 0.5s ,suoxiao 0.5s 0.5s;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*页面主体end*/
